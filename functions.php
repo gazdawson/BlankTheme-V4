@@ -23,7 +23,7 @@ $roots_includes = array(
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
   'lib/meta-boxes.php',      // Custom functions
-  'lib/options.php',      // Custom functions
+  'lib/options.php',         // Redux Framework Options Config
 );
 
 foreach ($roots_includes as $file) {

@@ -1,35 +1,14 @@
-
 <?php
-/**
- * Registering meta boxes
- *
- * All the definitions of meta boxes are listed below with comments.
- * Please read them CAREFULLY.
- *
- * You also should read the changelog to know what has been changed before updating.
- *
- * For more information, please visit:
- * @link http://metabox.io/docs/registering-meta-boxes/
- */
-add_filter( 'rwmb_meta_boxes', 'your_prefix_register_meta_boxes' );
-/**
- * Register meta boxes
- *
- * Remember to change "your_prefix" to actual prefix in your project
- *
- * @param array $meta_boxes List of meta boxes
- *
- * @return array
- */
-function your_prefix_register_meta_boxes( $meta_boxes )
-{
+	add_filter( 'rwmb_meta_boxes', 'krank_register_meta_boxes' );
+
+function krank_register_meta_boxes( $meta_boxes ) {
 	/**
 	 * prefix of meta keys (optional)
 	 * Use underscore (_) at the beginning to make keys hidden
 	 * Alt.: You also can make prefix empty to disable it
 	 */
 	// Better has an underscore as last sign
-	$prefix = 'your_prefix_';
+	$prefix = 'krank_';
 	// 1st meta box
 	$meta_boxes[] = array(
 		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
