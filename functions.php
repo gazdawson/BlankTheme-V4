@@ -22,8 +22,8 @@ $roots_includes = array(
   'lib/gallery.php',         // Custom [gallery] modifications
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
-  'lib/meta-boxes.php',      // Custom functions
-  'lib/options.php',         // Redux Framework Options Config
+  'lib/meta-boxes.php',      // Meta Boxes Custom Config
+  'lib/options.php',         // Redux Framework Custom Config
 );
 
 foreach ($roots_includes as $file) {
