@@ -22,8 +22,11 @@ $roots_includes = array(
   'lib/gallery.php',         // Custom [gallery] modifications
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
-  'lib/meta-boxes.php',      // Meta Boxes Custom Config
-  'lib/options.php',         // Redux Framework Custom Config
+  
+  'lib/meta-boxes.php',                   // Meta Boxes Custom Config
+  'lib/options.php',                      // Redux Framework Custom Config
+  'tgm/class-tgm-plugin-activation.php',  // TGM plugin dependency class
+  'tgm/plugin-dependencies.php',          // TGM plugin config
 );
 
 foreach ($roots_includes as $file) {
