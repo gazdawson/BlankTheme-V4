@@ -23,6 +23,7 @@ $roots_includes = array(
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
   
+  'lib/theme-functions.php',              // Custom functions
   'lib/meta-boxes.php',                   // Meta Boxes Custom Config
   'lib/options.php',                      // Redux Framework Custom Config
   'tgm/class-tgm-plugin-activation.php',  // TGM plugin dependency class
