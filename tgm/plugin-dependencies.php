@@ -44,17 +44,22 @@ function my_theme_register_required_plugins() {
 
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
         array(
-            'name'      => 'Meta Box',
+            'name'      => 'Meta Box - Custom meta boxes for posts and pages',
             'slug'      => 'meta-box',
             'required'  => true,
         ),
         array(
-            'name'      => 'Redux Framework',
+            'name'      => 'Redux Framework - Theme options framework',
             'slug'      => 'redux-framework',
             'required'  => true,
         ),
         array(
-            'name'      => 'WooCommerce',
+            'name'      => 'wpMandrill - Send emails through Mandrill transactional email service',
+            'slug'      => 'wpmandrill',
+            'required'  => true,
+        ),
+        array(
+            'name'      => 'WooCommerce - Ecommerce store plugin',
             'slug'      => 'woocommerce',
             'required'  => false,
         ),
