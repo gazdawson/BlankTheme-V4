@@ -4,9 +4,9 @@
      * For full documentation, please visit: http://docs.reduxframework.com/
      */
 
-    if ( ! class_exists( 'krank_config' ) ) {
+    if ( ! class_exists( 'Redux_Framework_sample_config' ) ) {
 
-        class krank_config {
+        class Redux_Framework_sample_config {
 
             public $args = array();
             public $sections = array();
@@ -233,6 +233,144 @@
 
                     $sampleHTML = $wp_filesystem->get_contents( dirname( __FILE__ ) . '/info-html.html' );
                 }
+				
+				// =================================================================================================
+				// = Krank Custom Feilds ************************************************************************* =
+				// =================================================================================================
+				
+				$this->sections[] = array(
+					'icon' => 'el-icon-cog',
+					'title' => __('Business Information', 'redux-framework-demo'),
+					'fields' => array(
+						// Business Name
+						array(
+							'id'=>'name',
+							'type' => 'text',
+							'title' => __('Business Name', 'redux-framework-demo'),
+							'subtitle' => __('Please enter your business name', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => 'Business Name',
+						),
+						// Business Address
+						array(
+							'id'=>'address',
+							'type' => 'text',
+							'title' => __('Address', 'redux-framework-demo'),
+							'subtitle' => __('Please enter your full address as you would like it to appear on the fron end.', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'data' => 'post_type',
+							'options' => array(
+								'streetAddress'=>'Address 1',
+								'addressLocality'=>'Town/City',
+								'addressRegion'=>'State/County',
+								'postalCode'=>'Zip/Post Code',
+								'addressCountry'=>'Country'
+							),
+							'default' => array(
+								'streetAddress'=>'Address 1',
+								'addressLocality'=>'Town/City',
+								'addressRegion'=>'State/County',
+								'postalCode'=>'Zip/Post Code',
+								'addressCountry'=>'Country'
+							),
+						),
+						// Business Location
+						array(
+							'id'=>'location',
+							'type' => 'text',
+							'title' => __('Location', 'redux-framework-demo'),
+							'subtitle' => __('Please enter the Latitude and Logitude for your exact location.', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'data' => 'post_type',
+							'options' => array(
+								'latitude'=>'Latitude',
+								'longitude'=>'Longitude'
+							),
+							'default' => array(
+								'latitude'=>'',
+								'longitude'=>''
+							),
+						),
+						// Business Contact
+						array(
+							'id'=>'contact',
+							'type' => 'text',
+							'title' => __('Contact Info', 'redux-framework-demo'),
+							'subtitle' => __('Please enter your methods of contact below. Leave blank any methods you do not wish to be displayed on the site.', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'data' => 'post_type',
+							'options' => array(
+								'telephone'=>'Telephone',
+								'faxNumber'=>'Fax No',
+								'email'=>'Email'
+							),
+							'default' => array(
+								'telephone'=>'Telephone',
+								'faxNumber'=>'Fax No',
+								'email'=>'Email'
+							),
+						),
+						// Business Open Hours
+						array(
+							'id'=>'open',
+							'type' => 'text',
+							'title' => __('Opening Hours', 'redux-framework-demo'),
+							'subtitle' => __('Please enter your business hours', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'data' => 'post_type',
+							'options' => array(
+								'Monday'=>'Monday',
+								'Tuesday'=>'Tuesday',
+								'Wednesday'=>'Wednesday',
+								'Thursday'=>'Thursday',
+								'Friday'=>'Friday',
+								'Saturday'=>'Saturday',
+								'Sunday'=>'Sunday'
+							),
+							'default' => array(
+								'Monday'=>'09:00 - 17:30',
+								'Tuesday'=>'09:00 - 17:30',
+								'Wednesday'=>'09:00 - 17:30',
+								'Thursday'=>'09:00 - 17:30',
+								'Friday'=>'09:00 - 17:30',
+								'Saturday'=>'09:00 - 17:30',
+								'Sunday'=>'09:00 - 16:00'
+							),
+						),
+					)
+				);
+				
+                $this->sections[] = array(
+                    'icon'   => 'el-icon-cogs',
+                    'title'  => __( 'Carousel Options', 'redux-framework-demo' ),
+                    'fields' => array(
+	                    array(
+	                        'id'       => 'home_slides_switch',
+	                        'type'     => 'switch',
+	                        'title'    => __( 'Enable / Disable Home Page Carousel', 'redux-framework-demo' ),
+	                        'subtitle' => __( '', 'redux-framework-demo' ),
+	                        'default'  => true,
+							'on' => 'Enabled',
+							'off' => 'Disabled',
+	                    ),
+                        array(
+                            'id'          => 'home_slides',
+                            'type'        => 'slides',
+                            'title'       => __( 'Homepage Main Carousel', 'redux-framework-demo' ),
+                            'subtitle'    => __( '', 'redux-framework-demo' ),
+                            'desc'        => __( '', 'redux-framework-demo' ),
+                            'placeholder' => array(
+                                'title'       => __( 'Caption Title', 'redux-framework-demo' ),
+                                'description' => __( 'Caption Content', 'redux-framework-demo' ),
+                                'url'         => __( 'Slide Link', 'redux-framework-demo' ),
+                            ),
+                        ),
+					)
+                );
+						
+				// =================================================================================================
+				// = Redux Smaple Feilds ************************************************************************* =
+				// =================================================================================================
 
                 // ACTUAL DECLARATION OF SECTIONS
                 $this->sections[] = array(
@@ -1514,7 +1652,7 @@
                             'subtitle' => __( 'This is a completely unique field type', 'redux-framework-demo' ),
                             'desc'     => __( 'This is created with a callback function, so anything goes in this field. Make sure to define the function though.', 'redux-framework-demo' ),
                             //'callback'  => array( $this, 'class_field_callback' ) // Can use the current class object
-                            'callback' => array( 'krank_config', 'class_field_callback' )
+                            'callback' => array( 'Redux_Framework_sample_config', 'class_field_callback' )
                             // Can use just class name
                         ),
                         array(
@@ -1855,7 +1993,7 @@
         }
 
         global $reduxConfig;
-        $reduxConfig = new krank_config();
+        $reduxConfig = new Redux_Framework_sample_config();
     } else {
         echo "The class named Redux_Framework_sample_config has already been called. <strong>Developers, you need to prefix this class with your company name or you'll run into problems!</strong>";
     }
