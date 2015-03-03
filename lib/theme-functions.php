@@ -4,11 +4,46 @@
  * @package Krank
 */
 
+
+// pass varibles to template file class
+if ( ! class_exists('krank_templateView') ) {
+    class krank_templateView {
+        private $args;
+        private $file;
+ 
+        public function __get($name) {
+            return $this->args[$name];
+        }
+ 
+        public function __construct($file, $args = array()) {
+            $this->file = $file;
+            $this->args = $args;
+        }
+ 
+        public function __isset($name){
+            return isset( $this->args[$name] );
+        }
+ 
+        public function render() {
+            if( locate_template($this->file) ){
+                include( locate_template($this->file) );//Theme Check free. Child themes support.
+            }
+        }
+    }
+}
+// pass varibles to template file function
+if( ! function_exists('krank_get_template_part') ){
+    function krank_get_template_part($file, $args = array()){
+        $template = new krank_templateView($file, $args);
+        $template->render();
+    }
+}
+
 // Structured Data Address
 function krank_structured_business() {
 	// Declare Variables
 	global $krank;
-	$address_lines.$contact_lines.$open_lines = '';
+	$address_lines = $contact_lines = $open_lines = '';
 	
 	// Business Name
 	if($krank['name']) {
@@ -63,96 +98,4 @@ function krank_structured_business() {
 		
 	// Return Output
 	return $business_info.$location;
-}
-
-// Bootstrap Carousels
-function carousel($slide_type, $id, $controls, $indicators, $captions, $trans) {
-	// Declare vars
-	global $krank;
-	$indicator.$items = '';
-	$count = 0;
-	
-	// Slide or fade
-	if($trans == 'fade') {
-		$transition = 'carousel slide carousel-fade';
-	}
-	else {
-		$transition = 'carousel slide';
-	} 
-	
-	// Loop
-	foreach($krank[$slide_type] as $slides) {
-		
-		$title = $slides['title'];
-		$description = $slides['description'];
-		$link = $slides['url'];
-		$images	= $slides['image'];
-		$images_height = $slides['height'];
-		$images_width =	$slides['width'];
-		
-		// .active class for first slide
-		if ($count === 0 ) {
-			$active = ' active'; 
-		}
-		else {
-			$active = ''; 
-		}
-		
-		// Carousel Controls
-		if ($controls != false) {
-			$control =
-		        '<a class="left carousel-control" href="#'.$id.'" data-slide="prev">
-			        <span class="fa fa-angle-left"></span>
-		        </a>
-		        <a class="right carousel-control" href="#'.$id.'" data-slide="next">
-					<span class="fa fa-angle-right"></span>
-		        </a>';
-		}
-		
-		// Carousel Indicators
-		if ($indicators != false) {
-			$indicator .=
-				'<li data-target="#'.$id.'" data-slide-to="'.$count.'" class="'.$active.'"></li>';
-		}
-		
-		// Carousel Captions
-		if ($captions != false) {
-			$caption =
-			 	'<div class="carousel-caption">
-			 		<span class="carousel-title">'.$title.'</span>
-			 		<p class="carousel-description">'.$description.'</p>'.
-			 	'</div>';
-		}
-		
-		// Carousel Images
-		if($images != "") {
-			$image =
-				'<img src="'.$images.'" alt="'.$title.'" class="carousel-img" width="'.$images_width.'" height="'.$images_height.'" />';
-		}
-		
-		// Carousel Slides
-		$items .=
-			'<div class="item'.$active.'">'.
-				'<a href="'.$link.'" title="'.$title.'">'.
-					$image.
-					$caption.
-				'</a>'.
-			'</div>';
-	
-		// End Loop and add to count
-		$count++;
-	}
-	
-	$output = // Putting it all together
-		'<div id="'.$id.'" class="'.$transition.'" data-ride="carousel">
-			<ol class="carousel-indicators">'.
-				$indicator.
-			'</ol>
-			<div class="carousel-inner">'.
-				$items.
-			'</div>'.
-			$control.
-		 '</div><!--/#'.$id.'-->';
-		 
-	echo $output;
 }
