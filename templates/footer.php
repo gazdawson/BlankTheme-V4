@@ -4,8 +4,8 @@
   <div class="container">
     <?php dynamic_sidebar('sidebar-footer'); ?>
   </div>
-	<div class="structured-data">
-		<?php echo krank_structured_business();?>
+	<div class="container structured-data">
+		<?php get_template_part('templates/business-info'); ?>
 	</div>
 </footer>
 
