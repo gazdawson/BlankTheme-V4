@@ -22,7 +22,21 @@ var Roots = {
   // All pages
   common: {
     init: function() {
-      // JavaScript to be fired on all pages
+      
+		// to top link
+		$(window).scroll(function() {
+			if($(this).scrollTop() > 100) {
+				$('#to-top').fadeIn(300);
+			} else {
+				$('#to-top').fadeOut(300);
+			}
+		});
+		// Animate Scroll to Top 
+		$('#to-top').click(function(event) {
+			event.preventDefault();
+			$('html, body').animate({scrollTop: 0}, 300);
+		});
+		
     }
   },
   // Home page
