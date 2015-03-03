@@ -1,0 +1,40 @@
+// ===================
+// = Krank Carousels =
+// ===================
+
+// Global carousel styles
+.carousel {
+	.carousel-inner {
+		.item {
+			max-height: 400px;
+			img {
+				.img-responsive;
+			}
+			.carousel-caption {
+				font-weight: 300;
+				background-color: fade(#000,50%);
+				.carousel-title {
+					font-size: @font-size-h2;
+					padding: 0 10px;
+				}
+				.carousel-description {
+					font-size: @font-size-h3;
+					padding: 0 10px;
+					display: block;
+				}
+			}
+		}
+	}
+	.carousel-control{
+		background-image: none;
+		span {
+			font-size: 60px;
+			line-height: 400px;
+		}
+	}
+}
+
+// Home Carousel
+#home-carousel {
+	margin-top: 0;
+}

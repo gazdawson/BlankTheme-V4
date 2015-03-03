@@ -5,11 +5,17 @@
  */
 ?>
 <?php
-	// krank_carousel($slide_type, $id, $controls, $indicators, $captions, $trans)
-	if ($krank['home_slides_switch'] == 1) {
-		carousel('home_slides', 'home-carousel', true, true, true, 'slide'); 
-	}
+	// Krank Carousel ($slide_type, $id, $controls, $indicators, $captions, $trans)
+	krank_get_template_part( 'templates/carousel.php', array(
+		'slide_type' => 'home_slides',
+		'id' => 'home-carousel',
+		'captions' => true,
+		'indicators' => true,
+		'controls' => true,
+		'transition' => 'carousel-fade'
+	) );
 ?>
+
 <div class="container">
 	<?php while (have_posts()) : the_post(); ?>
 	  <?php get_template_part('templates/page', 'header'); ?>
