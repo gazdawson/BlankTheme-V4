@@ -23,8 +23,8 @@ function roots_scripts() {
     $assets = array(
       'css'       => '/assets/css/main.css',
       'js'        => '/assets/js/scripts.js',
-      'modernizr' => '/assets/js/modernizr.js',
-	  'respond' => '/assets/js/respond.js',
+			'main'      => '/assets/js/main.js',
+			'respond'   => '/assets/js/vendor/respond.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
   } else {
@@ -33,8 +33,8 @@ function roots_scripts() {
     $assets     = array(
       'css'       => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
       'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
-      'modernizr' => '/assets/js/modernizr.js',
-	  'respond' => '/assets/js/respond.js',
+			'main'      => '/assets/js/main.js',
+	    'respond'   => '/assets/js/vendor/respond.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
     );
   }
@@ -55,11 +55,11 @@ function roots_scripts() {
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
-
-  wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, true);
+	
   wp_enqueue_script('respond', get_template_directory_uri() . $assets['respond'], array(), null, true);
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
+	wp_enqueue_script('main', get_template_directory_uri() . $assets['main'], array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 
