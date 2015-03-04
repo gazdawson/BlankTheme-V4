@@ -1,5 +1,39 @@
+// ===============
+// = Post Styles =
+// ===============
+
 .hentry header { }
 .hentry time { }
 .hentry .byline { }
 .hentry .entry-content { }
 .hentry footer { }
+
+
+// Post Image Alignments
+
+.aligncenter {
+	display: block;
+	margin: @padding-large-vertical auto;
+	text-align: center;
+}
+.alignleft {
+	float: left;
+	margin-right: @padding-large-horizontal;
+	margin-bottom: @padding-large-vertical;
+}
+.alignright {
+	float: right;
+	margin-left: @padding-large-horizontal;
+	margin-bottom: @padding-large-vertical;
+}
+.alignnone {
+	display: block;
+	margin-left: 0;
+	margin-right: 0;
+}
+figure {
+	clear: both;
+	img {
+		margin: 0;
+	}
+}
