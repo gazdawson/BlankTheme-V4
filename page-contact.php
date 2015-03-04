@@ -9,22 +9,15 @@
 	<div id="map"></div>
 <?php } // endif ?>
 
-<div class="container header">
+<div class="header">
 	<?php get_template_part('templates/page', 'header'); ?>
 </div>
-<div class="container">
-	<div class="content">
-		<div class="contact-form">
-			<h2>Send us a Message</h2>
-			<?php get_template_part('templates/contact-form'); ?>
-		</div>
-		<div class="contact-info">
-			<h2>Contact Us</h2>
-			<?php get_template_part('templates/business-info'); ?>
-		</div>
-	</div>
-	<?php get_template_part('templates/content', 'page'); ?>
+<div class="content">
+	<?php get_template_part('templates/contact-form'); ?>
+	<h2>Contact Us</h2>
+	<?php get_template_part('templates/business-info'); ?>
 </div>
+<?php get_template_part('templates/content', 'page'); ?>
 
 <?php
 	// Load Krank Options

@@ -76,7 +76,7 @@ if ( $sent == true ) {
 }
 
 ?>
-	
+<h2>Send us a Message</h2>
 <form id="contact-form" method="post" action="<?php echo get_permalink(); ?>">
     <div class="form-group">
         <input type="text" name="your_name" placeholder="<?php echo $label_name; ?>" id="cf_name" class="form-control" size="50" maxlength="50" value="<?php echo isset($form_data['your_name']); ?>" />
