@@ -16,11 +16,11 @@
 	<div class="content">
 		<div class="contact-form">
 			<h2>Send us a Message</h2>
-			<?php echo do_shortcode('[contact-form]'); ?>
+			<?php get_template_part('templates/contact-form'); ?>
 		</div>
 		<div class="contact-info">
 			<h2>Contact Us</h2>
-			<?php echo do_shortcode('[contact]'); ?>
+			<?php get_template_part('templates/business-info'); ?>
 		</div>
 	</div>
 	<?php get_template_part('templates/content', 'page'); ?>
