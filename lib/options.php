@@ -339,34 +339,76 @@
 						),
 					)
 				);
-				
-                $this->sections[] = array(
-                    'icon'   => 'el-icon-cogs',
-                    'title'  => __( 'Carousel Options', 'redux-framework-demo' ),
-                    'fields' => array(
-	                    array(
-	                        'id'       => 'home_slides_switch',
-	                        'type'     => 'switch',
-	                        'title'    => __( 'Enable / Disable Home Page Carousel', 'redux-framework-demo' ),
-	                        'subtitle' => __( '', 'redux-framework-demo' ),
-	                        'default'  => true,
+				// =================================================================================================
+				// = Krank Carousels ***************************************************************************** =
+				// =================================================================================================
+        $this->sections[] = array(
+	        'icon'   => 'el-icon-cogs',
+	        'title'  => __( 'Carousel Options', 'redux-framework-demo' ),
+	        'fields' => array(
+	          array(
+	            'id'       => 'home_slides_switch',
+	            'type'     => 'switch',
+	            'title'    => __( 'Enable / Disable Home Page Carousel', 'redux-framework-demo' ),
+	            'subtitle' => __( '', 'redux-framework-demo' ),
+	            'default'  => true,
 							'on' => 'Enabled',
 							'off' => 'Disabled',
-	                    ),
-                        array(
-                            'id'          => 'home_slides',
-                            'type'        => 'slides',
-                            'title'       => __( 'Homepage Main Carousel', 'redux-framework-demo' ),
-                            'subtitle'    => __( '', 'redux-framework-demo' ),
-                            'desc'        => __( '', 'redux-framework-demo' ),
-                            'placeholder' => array(
-                                'title'       => __( 'Caption Title', 'redux-framework-demo' ),
-                                'description' => __( 'Caption Content', 'redux-framework-demo' ),
-                                'url'         => __( 'Slide Link', 'redux-framework-demo' ),
-                            ),
-                        ),
+	          ),
+	          array(
+	            'id'          => 'home_slides',
+	            'type'        => 'slides',
+	            'title'       => __( 'Homepage Main Carousel', 'redux-framework-demo' ),
+	            'subtitle'    => __( '', 'redux-framework-demo' ),
+	            'desc'        => __( '', 'redux-framework-demo' ),
+	            'placeholder' => array(
+	                'title'       => __( 'Caption Title', 'redux-framework-demo' ),
+	                'description' => __( 'Caption Content', 'redux-framework-demo' ),
+	                'url'         => __( 'Slide Link', 'redux-framework-demo' ),
+	            ),
+	          ),
 					)
-                );
+        );
+				
+				// =================================================================================================
+				// = System Integrations ************************************************************************* =
+				// =================================================================================================
+				
+				$this->sections[] = array(
+					'icon' => 'el-icon-cogs',
+					'title' => __('System Integrations', 'redux-framework-demo'),
+					'fields' => array(
+						// Contact Email
+						array(
+							'id'=>'contact_email',
+							'type' => 'text',
+							'title' => __('Contact Form Email Address', 'redux-framework-demo'),
+							'subtitle' => __('The email address you wish messages via the contact form to be delivered to.', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => 'info@site.com',
+							'validate' => 'email',
+						),
+						// GA on off 
+						array(
+							'id'=>'ga',
+							'type' => 'switch', 
+							'title' => __('Google Analytics', 'redux-framework-demo'),
+							'subtitle'=> __('Disable if you do not wish to track your site through GA', 'redux-framework-demo'),
+							"default" 		=> 0,
+							'on' => 'Enabled',
+							'off' => 'Disabled',
+						),
+						// GA Tracking Code
+						array(
+							'id'=>'ga_code',
+							'type' => 'text',
+							'title' => __('Google Analytics Tracking Code (Universal Analytics Only)', 'redux-framework-demo'),
+							'subtitle' => __('Should look something like UA-XXXXXXXX-X', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => 'UA-XXXXXXXX-X',
+						),
+					)
+				);
 						
 				// =================================================================================================
 				// = Redux Smaple Feilds ************************************************************************* =

@@ -21,21 +21,25 @@ function roots_scripts() {
    */
   if (WP_ENV === 'development') {
     $assets = array(
-      'css'       => '/assets/css/main.css',
-      'js'        => '/assets/js/scripts.js',
-			'main'      => '/assets/js/main.js',
-			'respond'   => '/assets/js/vendor/respond.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
+      'css'            => '/assets/css/main.css',
+			'js'             => '/assets/js/scripts.js',
+			'main'           => '/assets/js/main.js',
+			'respond'        => '/assets/js/vendor/respond.js',
+			'formval'        => '/assets/js/vendor/formvalidation/js/formValidation.min.js',
+			'formval_frame'  => '/assets/js/vendor/formvalidation/js/framework/bootstrap.min.js',
+      'jquery'         => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
   } else {
     $get_assets = file_get_contents(get_template_directory() . '/assets/manifest.json');
     $assets     = json_decode($get_assets, true);
     $assets     = array(
-      'css'       => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
-      'js'        => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
-			'main'      => '/assets/js/main.js',
-	    'respond'   => '/assets/js/vendor/respond.js',
-      'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
+      'css'            => '/assets/css/main.min.css?' . $assets['assets/css/main.min.css']['hash'],
+      'js'             => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
+			'main'           => '/assets/js/main.js',
+			'respond'        => '/assets/js/vendor/respond.js',
+			'formval'        => '/assets/js/vendor/formvalidation/js/formValidation.min.js',
+			'formval_frame'  => '/assets/js/vendor/formvalidation/js/framework/bootstrap.min.js',
+      'jquery'         => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
     );
   }
 
@@ -60,6 +64,8 @@ function roots_scripts() {
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
 	wp_enqueue_script('main', get_template_directory_uri() . $assets['main'], array(), null, true);
+	wp_enqueue_script('formval', get_template_directory_uri() . $assets['formval'], array(), null, true);
+	wp_enqueue_script('formval_frame', get_template_directory_uri() . $assets['formval_frame'], array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 

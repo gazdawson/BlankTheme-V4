@@ -23,3 +23,4 @@
 	<?php endwhile; ?>
 </div>
 
+<?php get_template_part('templates/contact-form'); ?>

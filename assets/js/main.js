@@ -23,7 +23,7 @@ var Roots = {
   common: {
     init: function() {
       
-		// to top link
+		// Jump to top link
 		$(window).scroll(function() {
 			if($(this).scrollTop() > 100) {
 				$('#to-top').fadeIn(300);
@@ -31,10 +31,53 @@ var Roots = {
 				$('#to-top').fadeOut(300);
 			}
 		});
-		// Animate Scroll to Top 
+		// Jump to top link animate scroll
 		$('#to-top').click(function(event) {
 			event.preventDefault();
 			$('html, body').animate({scrollTop: 0}, 300);
+		});
+		
+		// Contact Form Validation 
+		$('#contact-form').formValidation({
+			framework: 'bootstrap',
+			icon: {
+				valid: 'fa fa-check',
+				invalid: 'fa fa-times',
+				validating: 'fa fa-refresh'
+			},
+			fields: {
+				your_name: {
+					validators: {
+						notEmpty: {
+							message: 'Please enter your name.'
+						}
+					}
+				},
+				email: {
+					validators: {
+						notEmpty: {
+							message: 'Please enter an email address.'
+						},
+						emailAddress: {
+							message: 'Please enter a valid email address.'
+						}
+					}
+				},
+				number: {
+					validators: {
+						notEmpty: {
+							message: 'Please enter a contact number.'
+						}
+					}
+				},
+				message: {
+					validators: {
+						notEmpty: {
+							message: 'A message is required.'
+						}
+					}
+				},
+			}
 		});
 		
     }
