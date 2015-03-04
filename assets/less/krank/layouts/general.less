@@ -2,6 +2,19 @@
 // = Global Styles =
 // =================
 
+// Button and link transitions
+a, 
+button, 
+.btn {
+	-webkit-transition: color @transition, background-color @transition, background @transition;
+	-moz-transition: color @transition, background-color @transition, background @transition;
+	-ms-transition: color @transition, background-color @transition, background @transition;
+	transition: color @transition, background-color @transition, background @transition;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 // Content wrapper
 .wrap { }
 
