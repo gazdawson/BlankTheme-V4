@@ -9,6 +9,27 @@
 .hentry footer { }
 
 
+// blockquotes styling
+blockquote {
+	position: relative;
+	border-left: none;
+	border-top: 1px solid @gray-lighter;
+	border-bottom: 1px solid @gray-lighter;
+	padding: @grid-gutter-width;
+	margin: @grid-gutter-width 0;
+	text-align: center;
+	color: @gray-light;
+	
+	&:before {
+		content: '"';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 60px;;
+	}
+}
+
 // Post Image Alignments
 
 .aligncenter {
