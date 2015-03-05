@@ -1838,9 +1838,9 @@
                     // TYPICAL -> Change these values as you need/desire
                     'opt_name'             => 'krank',
                     // This is where your data is stored in the database and also becomes your global variable name.
-                    'display_name'         => $theme->get( 'Name' ),
+                    'display_name'         => $theme->get( 'Kank' ),
                     // Name that appears at the top of your panel
-                    'display_version'      => $theme->get( 'Version' ),
+                    'display_version'      => $theme->get( 'Version 4.0' ),
                     // Version that appears at the top of your panel
                     'menu_type'            => 'menu',
                     //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
@@ -1854,10 +1854,10 @@
                     // Set it you want google fonts to update weekly. A google_api_key value is required.
                     'google_update_weekly' => false,
                     // Must be defined to add google fonts to the typography module
-                    'async_typography'     => true,
+                    'async_typography'     => false,
                     // Use a asynchronous font on the front end or font string
                     //'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
-                    'admin_bar'            => true,
+                    'admin_bar'            => false,
                     // Show the panel pages on the admin bar
                     'admin_bar_icon'     => 'dashicons-portfolio',
                     // Choose an icon for the admin bar menu
@@ -1867,9 +1867,9 @@
                     // Set a different name for your global variable other than the opt_name
                     'dev_mode'             => true,
                     // Show the time the page took to load, etc
-                    'update_notice'        => true,
+                    'update_notice'        => false,
                     // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
-                    'customizer'           => true,
+                    'customizer'           => false,
                     // Enable basic customizer support
                     //'open_expanded'     => true,                    // Allow you to start the panel in an expanded way initially.
                     //'disable_save_warn' => true,                    // Disable the save warning when a user changes a field
@@ -1900,9 +1900,9 @@
 
                     // CAREFUL -> These options are for advanced use only
                     'transient_time'       => 60 * MINUTE_IN_SECONDS,
-                    'output'               => true,
+                    'output'               => false,
                     // Global shut-off for dynamic CSS output by the framework. Will also disable google fonts output
-                    'output_tag'           => true,
+                    'output_tag'           => false,
                     // Allows dynamic CSS to be generated for customizer and google fonts, but stops the dynamic CSS from going to the head
                     // 'footer_credit'     => '',                   // Disable the footer credit of Redux. Please leave if you can help it.
 
