@@ -1857,7 +1857,7 @@
                     'async_typography'     => false,
                     // Use a asynchronous font on the front end or font string
                     //'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
-                    'admin_bar'            => false,
+                    'admin_bar'            => true,
                     // Show the panel pages on the admin bar
                     'admin_bar_icon'     => 'dashicons-portfolio',
                     // Choose an icon for the admin bar menu

@@ -22,9 +22,19 @@
 	  <?php get_template_part('templates/content', 'page'); ?>
 	<?php endwhile; ?>
 	
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	  Contact
-	</button>
+	<?php
+		// Krank Modal
+		krank_get_template_part( 'templates/components/modal.php', array(
+			'modal_id' => 'contact',
+			'modal_btn_txt' => 'Contact Btn',
+			'modal_header' => true,
+			'modal_title' => 'Send us a message',
+			'modal_template' => 'templates/components/contact-form',
+			'modal_content' => '',
+			'modal_footer' => true,
+			'modal_footer_content' => '<a href="#" class="btn btn-primary">Submit</a>'
+		) );
+	?>
 	
 </div>
 
