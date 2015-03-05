@@ -4,6 +4,13 @@
  * @package Krank
 */
 
+// Wrap video embeds ind bootstrap responsive embed code.
+add_filter('embed_oembed_html', 'responsive_embed_html', 99, 4);
+
+function responsive_embed_html($html, $url, $attr, $post_id) {
+  return '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
+}
+
 
 // pass varibles to template file class
 if ( ! class_exists('krank_templateView') ) {
@@ -26,7 +33,7 @@ if ( ! class_exists('krank_templateView') ) {
  
         public function render() {
             if( locate_template($this->file) ){
-                include( locate_template($this->file) );//Theme Check free. Child themes support.
+                include( locate_template($this->file) ); // Theme Check free. Child themes support.
             }
         }
     }
