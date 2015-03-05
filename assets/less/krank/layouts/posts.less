@@ -37,3 +37,37 @@ figure {
 		margin: 0;
 	}
 }
+
+// Related Post Layout
+
+.relatedposts {
+	.make-row(0);
+	border-bottom: 1px solid @gray-lighter;
+	padding-bottom: @padding-large-vertical;
+	margin-bottom: @padding-large-vertical;
+	
+	.relatedthumb {
+		.make-sm-column(3);
+		-webkit-opacity: .8;
+		-moz-opacity: .8;
+		-ms-opacity: .8;
+		-o-opacity: .8;
+		opacity: .8;
+		
+		&:hover {
+			-webkit-opacity: 1;
+			-moz-opacity: 1;
+			-ms-opacity: 1;
+			-o-opacity: 1;
+			opacity: 1;
+		}
+	}
+	.related-title {
+		padding-top: 5px;
+		margin-bottom: 0;
+		color: @gray-dark;
+	}
+	.h3 {
+		margin-top: 0;
+	}
+}

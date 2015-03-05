@@ -440,6 +440,38 @@
 						),
 					)
 				);
+				
+				
+				// =================================================================================================
+				// = Blog Post Option Feilds ********************************************************************* =
+				// =================================================================================================
+
+				$this->sections[] = array(
+					'icon' => 'el-icon-wordpress',
+					'title' => __('Blog', 'redux-framework-demo'),
+					'fields' => array(
+						// related posts enable
+						array(
+							'id'=>'related_enable',
+							'type' => 'switch', 
+							'title' => __('Enable Related Posts', 'redux-framework-demo'),
+							'subtitle'=> __('Adds Related posts to bottom of all blog posts'),
+							"default" => 1,
+							'on' => 'Enabled',
+							'off' => 'Disabled',
+						),
+						// Number of Posts
+						array(
+							'id'=>'related_number',
+							'type' => 'text',
+							'title' => __('Number of Related Posts', 'redux-framework-demo'),
+							'subtitle' => __('Please enter the number of posts you would like to display.', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => '4',
+							'class' => 'small-text'
+						),
+					)
+				);
 						
 				// =================================================================================================
 				// = Redux Smaple Feilds ************************************************************************* =
