@@ -28,6 +28,7 @@ $roots_includes = array(
   'lib/options.php',                      // Redux Framework Custom Config
   'tgm/class-tgm-plugin-activation.php',  // TGM plugin dependency class
   'tgm/plugin-dependencies.php',          // TGM plugin config
+	'lib/woocommerce.php',                  // Woocommerce theme support (comment out if not installed)
 );
 
 foreach ($roots_includes as $file) {
