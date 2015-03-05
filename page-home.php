@@ -5,7 +5,7 @@
  */
 ?>
 <?php
-	// Krank Carousel ($slide_type, $id, $controls, $indicators, $captions, $trans)
+	// Krank Carousel
 	krank_get_template_part( 'templates/components/carousel.php', array(
 		'slide_type' => 'home_slides',
 		'id' => 'home-carousel',
@@ -35,6 +35,5 @@
 			'modal_footer_content' => '<a href="#" class="btn btn-primary">Submit</a>'
 		) );
 	?>
-	
 </div>
 
