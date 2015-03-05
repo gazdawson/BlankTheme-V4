@@ -5,7 +5,7 @@
     <?php dynamic_sidebar('sidebar-footer'); ?>
   </div>
 	<div class="container structured-data">
-		<?php get_template_part('templates/business-info'); ?>
+		<?php get_template_part('templates/components/business-info'); ?>
 	</div>
 </footer>
 

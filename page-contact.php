@@ -13,9 +13,9 @@
 	<?php get_template_part('templates/page', 'header'); ?>
 </div>
 <div class="content">
-	<?php get_template_part('templates/contact-form'); ?>
+	<?php get_template_part('templates/components/contact-form'); ?>
 	<h2>Contact Us</h2>
-	<?php get_template_part('templates/business-info'); ?>
+	<?php get_template_part('templates/components/business-info'); ?>
 </div>
 <?php get_template_part('templates/content', 'page'); ?>
 

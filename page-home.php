@@ -6,7 +6,7 @@
 ?>
 <?php
 	// Krank Carousel ($slide_type, $id, $controls, $indicators, $captions, $trans)
-	krank_get_template_part( 'templates/carousel.php', array(
+	krank_get_template_part( 'templates/components/carousel.php', array(
 		'slide_type' => 'home_slides',
 		'id' => 'home-carousel',
 		'captions' => true,
