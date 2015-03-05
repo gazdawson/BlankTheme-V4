@@ -2,3 +2,29 @@
 // = Navbar Styles =
 // =================
 
+.navbar {
+	.navbar-header {
+		.make-sm-column(2,0);
+		.navbar-toggle {}
+			
+		// Company Logo
+		.navbar-brand {
+			display: block;
+			background: url('../img/logo@2x.png');
+			background-size: auto 100% !important;
+			background-position: left center;
+			background-repeat: no-repeat;
+			height: @navbar-height - @padding-large-vertical;
+			width: 100%;
+			margin-left: 0;
+			.navbar-vertical-align((@navbar-height - @padding-large-vertical));
+			span {
+				.hide-text;
+			}
+		}
+		
+	}
+	.navbar-collapse {
+		.make-sm-column(10,0);
+	}
+}
