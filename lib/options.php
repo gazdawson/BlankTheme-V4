@@ -365,7 +365,7 @@
 							'subtitle' => __('Body background with image, color, etc.', 'redux-framework-demo'),
 							//'default' => '#FFFFFF',
 							//'validate' => 'color',
-						),		
+						),	
 					)
 				);
 				
