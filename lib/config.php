@@ -29,7 +29,7 @@ function roots_sidebar_body_class($classes) {
 add_filter('body_class', 'roots_sidebar_body_class');
 
 /**
- * Define which pages shouldn't have the sidebar
+ * Define which pages should have the sidebar
  *
  * See lib/sidebar.php for more details
  */
@@ -50,7 +50,7 @@ function roots_display_sidebar() {
        */
       array(
         'is_404',
-        'is_front_page'
+        //'is_front_page'
       ),
       /**
        * Page template checks (via is_page_template())

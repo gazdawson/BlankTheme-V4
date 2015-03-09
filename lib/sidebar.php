@@ -15,7 +15,7 @@ class Roots_Sidebar {
   private $conditionals;
   private $templates;
 
-  public $display = true;
+  public $display = false;
 
   function __construct($conditionals = array(), $templates = array()) {
     $this->conditionals = $conditionals;
@@ -25,7 +25,7 @@ class Roots_Sidebar {
     $templates    = array_map(array($this, 'check_page_template'), $this->templates);
 
     if (in_array(true, $conditionals) || in_array(true, $templates)) {
-      $this->display = false;
+      $this->display = true;
     }
   }
 
