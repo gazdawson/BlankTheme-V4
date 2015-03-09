@@ -37,5 +37,3 @@
 	?>
 </div>
 
-<?php get_template_part('frontendpost/template-insert-posts', 'page'); ?>
-

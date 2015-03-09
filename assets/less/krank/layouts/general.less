@@ -48,6 +48,19 @@ img {
   }
 }
 
+// Titles
+
+.section-header {
+	text-align: center;
+
+	&:after {
+		content: '';
+		display: block;
+		width: 15%;
+		border-bottom: 1px solid @gray-lighter;
+		margin: @grid-gutter-width auto;
+	}
+}
 
 // Structured data business info
 .business-info {

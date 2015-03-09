@@ -5784,8 +5784,6 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
-.relatedposts:before,
-.relatedposts:after,
 .form-horizontal .comment-form p:before,
 .form-horizontal .comment-form p:after {
   content: " ";
@@ -5806,7 +5804,6 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
-.relatedposts:after,
 .form-horizontal .comment-form p:after {
   clear: both;
 }
@@ -8018,6 +8015,16 @@ img {
     width: 66.66666666666666%;
   }
 }
+.section-header {
+  text-align: center;
+}
+.section-header:after {
+  content: '';
+  display: block;
+  width: 15%;
+  border-bottom: 1px solid #ecf0f1;
+  margin: 30px auto;
+}
 .business-info {
   color: #95a5a6;
   text-align: center;
@@ -8088,20 +8095,26 @@ img {
 blockquote {
   position: relative;
   border-left: none;
-  border-top: 1px solid #ecf0f1;
-  border-bottom: 1px solid #ecf0f1;
-  padding: 30px;
   margin: 30px 0;
+  font-size: 18px;
   text-align: center;
-  color: #bdc3c7;
+  font-style: italic;
+  color: #95a5a6;
+}
+blockquote:before,
+blockquote:after {
+  content: '';
+  display: inline-block;
+  width: 15%;
+  margin: 0 auto;
 }
 blockquote:before {
-  content: '"';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 60px;
+  padding-bottom: 30px;
+  border-top: 1px solid #ecf0f1;
+}
+blockquote:after {
+  padding-top: 30px;
+  border-bottom: 1px solid #ecf0f1;
 }
 .aligncenter {
   display: block;
@@ -8129,42 +8142,89 @@ figure {
 figure img {
   margin: 0;
 }
-.relatedposts {
-  margin-left: 0;
-  margin-right: 0;
-  border-bottom: 1px solid #ecf0f1;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
 .relatedposts .relatedthumb {
+  border: 1px solid #ecf0f1;
+  margin-bottom: 10px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.relatedposts .relatedthumb:before,
+.relatedposts .relatedthumb:after {
+  content: " ";
+  display: table;
+}
+.relatedposts .relatedthumb:after {
+  clear: both;
+}
+.relatedposts .relatedthumb:before,
+.relatedposts .relatedthumb:after {
+  content: " ";
+  display: table;
+}
+.relatedposts .relatedthumb:after {
+  clear: both;
+}
+.relatedposts .relatedthumb a {
+  display: block;
+  color: #95a5a6;
+}
+.relatedposts .relatedthumb a:hover {
+  background-color: #ecf0f1;
+}
+.relatedposts .relatedthumb .related-image {
+  position: relative;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .relatedposts .relatedthumb .related-image {
+    float: left;
+    width: 16.666666666666664%;
+  }
+}
+.relatedposts .relatedthumb .related-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.relatedposts .relatedthumb .related-title,
+.relatedposts .relatedthumb .related-excerpt {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
-  -webkit-opacity: .8;
-  -moz-opacity: .8;
-  -ms-opacity: .8;
-  -o-opacity: .8;
-  opacity: .8;
 }
 @media (min-width: 768px) {
-  .relatedposts .relatedthumb {
+  .relatedposts .relatedthumb .related-title,
+  .relatedposts .relatedthumb .related-excerpt {
     float: left;
-    width: 25%;
+    width: 83.33333333333334%;
   }
 }
-.relatedposts .relatedthumb:hover {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  -ms-opacity: 1;
-  -o-opacity: 1;
-  opacity: 1;
-}
-.relatedposts .related-title {
-  padding-top: 5px;
-  margin-bottom: 0;
-  color: #7f8c8d;
-}
-.relatedposts .h3 {
+.relatedposts .relatedthumb .related-title {
+  font-family: inherit;
+  font-weight: 300;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  padding-top: 15px;
   margin-top: 0;
+}
+.relatedposts .relatedthumb .related-title small,
+.relatedposts .relatedthumb .related-title .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #bdc3c7;
+}
+.relatedposts .relatedthumb .related-title small,
+.relatedposts .relatedthumb .related-title .small {
+  font-size: 65%;
 }

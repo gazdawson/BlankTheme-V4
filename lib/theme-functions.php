@@ -22,19 +22,21 @@ function related_posts() {
 	        'tag__in' => $tag_ids,
 	        'post__not_in' => array($post->ID),
 	        'posts_per_page' => $krank['related_number'], // Number of related posts to display.
-	        'ignore_sticky_posts'=>1
+	        'ignore_sticky_posts'=> 1
 	    );
 
 	$my_query = new wp_query( $args );
 
 	while( $my_query->have_posts() ) {
 	    $my_query->the_post();
+			$excerpt = strip_tags(get_the_excerpt()); // get excerpt and strip tags
 			
 	    $output = 
 				'<div class="relatedthumb">
 	        <a rel="external" href="'.get_the_permalink().'">'.
-						get_the_post_thumbnail( $post->ID, 'related').
+						'<p class="related-image">'.get_the_post_thumbnail( $post->ID ).'</p>'.
 						'<p class="related-title">'.get_the_title().'</p>'.
+						'<p class="related-excerpt">'.$excerpt.'</p>'.
 	        '</a>
 	    	</div>';
 					
