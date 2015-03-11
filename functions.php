@@ -23,6 +23,7 @@ $roots_includes = array(
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
   
+	// Krank Custom Includes
   'lib/theme-functions.php',              // Custom functions
   'lib/meta-boxes.php',                   // Meta Boxes Custom Config
   'lib/options.php',                      // Redux Framework Custom Config
