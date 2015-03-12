@@ -438,6 +438,33 @@
 							'desc' => __('', 'redux-framework-demo'),
 							'default' => 'UA-XXXXXXXX-X',
 						),
+						
+						// Instagram Feed
+						array(
+							'id'=>'instagram_profile',
+							'type' => 'text',
+							'title' => __('Instagram user profile URL', 'redux-framework-demo'),
+							'subtitle' => __('', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => 'https://instagram.com/',
+						),
+						array(
+							'id'=>'instagram_access_token',
+							'type' => 'text',
+							'title' => __('Instagram user access token', 'redux-framework-demo'),
+							'subtitle' => __('Generate one <a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">Here</a>', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => '',
+						),
+						// Instagram Feed
+						array(
+							'id'=>'instagram_user_id',
+							'type' => 'text',
+							'title' => __('Instagram user id', 'redux-framework-demo'),
+							'subtitle' => __('Get it <a href="http://www.pinceladasdaweb.com.br/instagram/access-token/" target="_blank">Here</a>', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => '',
+						),
 					)
 				);
 				
