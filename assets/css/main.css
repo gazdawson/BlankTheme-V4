@@ -7946,6 +7946,104 @@ button.close {
 .form-control-feedback {
   line-height: 36px;
 }
+.gallery .gallery-row {
+  list-style: none;
+  line-height: 0;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 5px;
+  -moz-column-count: 4;
+  -moz-column-gap: 5px;
+  column-count: 4;
+  column-gap: 5px;
+}
+.gallery .gallery-image {
+  width: 100% !important;
+  height: auto !important;
+  padding: 0;
+}
+.gallery .gallery-image .thumbnail,
+.gallery .gallery-image .wp-caption {
+  margin: 0;
+  margin-bottom: 5px;
+  border: none;
+}
+#gallery-modal .modal-dialog {
+  width: 75%;
+  margin: 10% auto;
+}
+#gallery-modal .modal-content {
+  position: relative;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  overflow: hidden;
+}
+#gallery-modal .modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  border: 0;
+}
+#gallery-modal .modal-header button {
+  font-size: 30px;
+}
+#gallery-modal .caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+#gallery-modal .modal-body {
+  padding: 0;
+  z-index: 0;
+}
+#gallery-modal .modal-body img {
+  width: 100%;
+  height: auto;
+}
+#gallery-modal .modal-body .gallery-control {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+#gallery-modal .modal-body .gallery-control a {
+  padding: 16px;
+  color: white;
+  font-size: 60px;
+  margin-top: -60px;
+}
+#gallery-modal .modal-body .gallery-control .next {
+  float: right;
+}
+#gallery-modal .modal-body .gallery-control .previous {
+  float: left;
+}
+@media (max-width: 1200px) {
+  .gallery .gallery-row {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+@media (max-width: 992px) {
+  .gallery .gallery-row {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+@media (max-width: 768px) {
+  .gallery .gallery-row {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
 .gallery-row {
   padding: 11px 0;
 }

@@ -44,7 +44,7 @@ function roots_gallery($attr) {
     'size'       => 'thumbnail',
     'include'    => '',
     'exclude'    => '',
-    'link'       => ''
+    'link'       => 'file'
   ), $attr));
 
   $id = intval($id);
@@ -82,6 +82,7 @@ function roots_gallery($attr) {
 
   $unique = (get_query_var('page')) ? $instance . '-p' . get_query_var('page'): $instance;
   $output = '<div class="gallery gallery-' . $id . '-' . $unique . '">';
+	$output .= '<ul class="row gallery-row">';
 
   $i = 0;
   foreach ($attachments as $id => $attachment) {
@@ -96,20 +97,13 @@ function roots_gallery($attr) {
         $image = wp_get_attachment_link($id, $size, true, false);
         break;
     }
-    $output .= ($i % $columns == 0) ? '<div class="row gallery-row">': '';
-    $output .= '<div class="' . $grid .'">' . $image;
+    $output .= '<li class="gallery-image" data-caption="'.wptexturize($attachment->post_excerpt).'">' . $image;
 
-    if (trim($attachment->post_excerpt)) {
-      $output .= '<div class="caption hidden">' . wptexturize($attachment->post_excerpt) . '</div>';
-    }
-
-    $output .= '</div>';
+    $output .= '</li>';
     $i++;
-    $output .= ($i % $columns == 0) ? '</div>' : '';
   }
-
-  $output .= ($i % $columns != 0 ) ? '</div>' : '';
-  $output .= '</div>';
+  $output .= '</ul>';
+	$output .= '</div>';
 
   return $output;
 }
@@ -123,7 +117,8 @@ if (current_theme_supports('bootstrap-gallery')) {
  * Add class="thumbnail img-thumbnail" to attachment items
  */
 function roots_attachment_link_class($html) {
-  $html = str_replace('<a', '<a class="thumbnail img-thumbnail"', $html);
+  $postid = get_the_ID();
+  $html = str_replace('<a href=', '<a class="thumbnail img-thumbnail" data-toggle="modal" href="#" data-imgpath=', $html);
   return $html;
 }
 add_filter('wp_get_attachment_link', 'roots_attachment_link_class', 10, 1);
