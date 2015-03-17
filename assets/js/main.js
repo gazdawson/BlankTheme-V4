@@ -80,7 +80,6 @@ var Roots = {
 			}
 		});
 		
-		
 		// open gallery images in bootstrap modal
 		$('li.gallery-image').click(function(e) {
 			// Get image src and create html img.
@@ -98,7 +97,7 @@ var Roots = {
 			// write modal html image and controls             
 			var html = '';
 				html += img;
-				if (caption != '') {
+				if (caption !== '') {
 					html += '<div class="caption">'+ caption +'</div>';
 				}
 				html += '<div class="gallery-control">';
@@ -120,7 +119,7 @@ var Roots = {
 			var index = $(this).attr('href');
 			// Get next image path and caption if it has one
 			var src = $('ul.row li:nth-child('+ index +') a').data('imgpath');
-			var caption = $('ul.row li:nth-child('+ index +')').data('caption');      
+			var caption = $('ul.row li:nth-child('+ index +')').data('caption');
 			// update image src and replace caption text
 			$('.modal-body img').attr('src', src);
 			$('.modal-content .caption').text(caption);
