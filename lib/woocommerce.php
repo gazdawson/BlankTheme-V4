@@ -10,3 +10,6 @@ add_theme_support( 'woocommerce' );
 // remove the WooCommerce page headers.
 add_filter('woocommerce_show_page_title', '__return_false');
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+
+// remove default woo commerce styling
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
