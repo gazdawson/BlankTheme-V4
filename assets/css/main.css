@@ -8513,6 +8513,22 @@ img {
     margin-left: 8.333333333333332%;
   }
 }
+.single-post .entry-meta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px 16px;
+  line-height: 30px;
+  border-top: 1px solid #ecf0f1;
+}
+.single-post .entry-meta .avatar {
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
 blockquote {
   position: relative;
   border-left: none;

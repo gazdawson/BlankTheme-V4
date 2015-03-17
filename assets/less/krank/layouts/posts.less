@@ -15,6 +15,23 @@
 		.make-sm-column(10);
 		.make-sm-column-offset(1);
 	}
+	
+	.entry-meta {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		background-color: white;
+		padding: @padding-large-vertical @padding-large-horizontal;
+		line-height: 30px;
+		border-top: 1px solid @gray-lighter;
+		.avatar {
+			.img-circle;
+			float: left;
+			margin-right: @padding-small-horizontal;
+		}
+	}
 }
 
 
