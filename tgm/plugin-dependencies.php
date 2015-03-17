@@ -42,12 +42,6 @@ function my_theme_register_required_plugins() {
      */
     $plugins = array(
 
-        // This is an example of how to include a plugin from the WordPress Plugin Repository.
-        array(
-            'name'      => 'Meta Box - Custom meta boxes for posts and pages',
-            'slug'      => 'meta-box',
-            'required'  => true,
-        ),
         array(
             'name'      => 'Redux Framework - Theme options framework',
             'slug'      => 'redux-framework',

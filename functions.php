@@ -24,11 +24,11 @@ $roots_includes = array(
   'lib/extras.php',          // Custom functions
   
 	// Krank Custom Includes
-  'lib/theme-functions.php',              // Custom functions
-  'lib/meta-boxes.php',                   // Meta Boxes Custom Config
-  'lib/options.php',                      // Redux Framework Custom Config
   'tgm/class-tgm-plugin-activation.php',  // TGM plugin dependency class
   'tgm/plugin-dependencies.php',          // TGM plugin config
+  'lib/theme-functions.php',              // Custom functions
+  'lib/metaboxes.php',                    // Meta Boxes Custom Config
+  'lib/options.php',                      // Redux Framework Custom Config
 	'lib/woocommerce.php',                  // Woocommerce theme support (comment out if not installed)
 );
 
