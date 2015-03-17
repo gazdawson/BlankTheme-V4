@@ -83,7 +83,7 @@ var Roots = {
 		// open gallery images in bootstrap modal
 		$('li.gallery-image').click(function(e) {
 			// Get image src and create html img.
-			var imgPath = $(this).find('a.thumbnail').data('imgpath');
+			var imgPath = $(this).find('a').data('imgpath');
 			var img = '<img src="' + imgPath + '" class="img-responsive"/>';
 			// Get Image Caption
 			var caption = $(this).data('caption');
@@ -97,33 +97,67 @@ var Roots = {
 			// write modal html image and controls             
 			var html = '';
 				html += img;
-				if (caption !== '') {
-					html += '<div class="caption">'+ caption +'</div>';
-				}
+				html += '<div class="caption">'+ caption +'</div>';
 				html += '<div class="gallery-control">';
 				html += '<a class="controls previous" href="' + (index) + '"><i class="fa fa-angle-left"></i></a>';
 				html += '<a class="controls next" href="'+ (index+2) + '"><i class="fa fa-angle-right"></i></a>';
 				html += '</div>';
+
 			// open photo modal
 			$("#gallery-modal").modal();
 			$('#gallery-modal').on('shown.bs.modal', function(){
 				$('#gallery-modal .modal-body').html(html);
+				
+				// hide image before its loaded
+				$('.modal-body img').hide();
+				
+				// check if image loaded.
+				$('.modal-body img').load(function(){
+					$('.modal-body img').fadeIn('slow');
+					// hide caption if empty
+					if(caption === '') {
+						$('.modal-body .caption').hide();
+					} else {
+						$('.modal-body .caption').hide().delay(500).fadeIn('fast');
+					}
+				});
+			
 			});
 			$('#gallery-modal').on('hidden.bs.modal', function(){
 				$('#gallery-modal .modal-body').html('');
 			});
 		});
 		
+		$('#gallery-modal a.controls').click(function(){
+			$('.modal-body img').hide();
+		});
+		
 		// add previous and next buttons to modal and dynamicvally load content
 		$(document).on('click', '#gallery-modal a.controls', function() {
 			var index = $(this).attr('href');
 			// Get next image path and caption if it has one
-			var src = $('ul.row li:nth-child('+ index +') a').data('imgpath');
-			var caption = $('ul.row li:nth-child('+ index +')').data('caption');
-			// update image src and replace caption text
+			var src = $('ul.gallery-row li:nth-child('+ index +') a').data('imgpath');
+			var caption = $('ul.gallery-row li:nth-child('+ index +')').data('caption');
+			
+			// hide old image and update new image src
+			$('.modal-body img').hide();
 			$('.modal-body img').attr('src', src);
-			$('.modal-content .caption').text(caption);
-
+			
+			
+			$('.modal-body img').load(function(){
+				$('.modal-body img').fadeIn('slow');
+				$('.modal-body .loader').hide();
+			});
+			
+			// hide caption
+			$('.modal-body .caption').hide();
+			
+			if(caption !== '') {
+				$('.modal-body .caption').text(caption).delay(500).fadeIn('fast');
+			} else {
+				$('.modal-body .caption').hide().text('');
+			}
+			
 			var newPrevIndex = parseInt(index) - 1;
 			var newNextIndex = parseInt(newPrevIndex) + 2;
 

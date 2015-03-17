@@ -82,7 +82,9 @@ function roots_gallery($attr) {
 
   $unique = (get_query_var('page')) ? $instance . '-p' . get_query_var('page'): $instance;
   $output = '<div class="gallery gallery-' . $id . '-' . $unique . '">';
-	$output .= '<ul class="row gallery-row">';
+
+
+	$output .= '<ul class="gallery-row '.$size.'">';
 
   $i = 0;
   foreach ($attachments as $id => $attachment) {
@@ -91,7 +93,7 @@ function roots_gallery($attr) {
         $image = wp_get_attachment_link($id, $size, false, false);
         break;
       case 'none':
-        $image = wp_get_attachment_image($id, $size, false, array('class' => 'thumbnail img-thumbnail'));
+        $image = wp_get_attachment_image($id, $size, false, array('class' => 'img-thumbnail'));
         break;
       default:
         $image = wp_get_attachment_link($id, $size, true, false);
@@ -104,6 +106,21 @@ function roots_gallery($attr) {
   }
   $output .= '</ul>';
 	$output .= '</div>';
+	
+	// add gallery bootstrap modal
+	$output .= 
+		'<div id="gallery-modal" class="modal fade">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+		      </div>
+					<span class="loader"><i class="fa fa-circle-o-notch fa-spin"></i></span>
+		      <div class="modal-body">
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /#gallery-modal .modal -->';
 
   return $output;
 }
@@ -118,7 +135,7 @@ if (current_theme_supports('bootstrap-gallery')) {
  */
 function roots_attachment_link_class($html) {
   $postid = get_the_ID();
-  $html = str_replace('<a href=', '<a class="thumbnail img-thumbnail" data-toggle="modal" href="#" data-imgpath=', $html);
+  $html = str_replace('<a href=', '<a data-toggle="modal" href="#" data-imgpath=', $html);
   return $html;
 }
 add_filter('wp_get_attachment_link', 'roots_attachment_link_class', 10, 1);

@@ -4,8 +4,30 @@
 
 // Gallery Layout
 .gallery {
-	.gallery-row { 
+	
+	.gallery-row {
 		list-style: none;
+		.make-row();
+	}
+	
+	.gallery-row.thumbnail {
+		border: none;
+		background-color: transparent;
+		li {
+			.make-sm-column(3,@padding-large-horizontal / 2);
+			.make-md-column(2,@padding-large-horizontal / 2);
+			
+			margin-bottom: @padding-large-horizontal / 2;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	
+	// Gallery styling for multi ratio images
+	.gallery-row.full,
+	.gallery-row.medium,
+	.gallery-row.large { 
 	    line-height: 0;
 	    -webkit-column-count: 4;
 	    -webkit-column-gap:   @padding-xs-horizontal;
@@ -14,12 +36,15 @@
 	    column-count:         4;
 	    column-gap:           @padding-xs-horizontal;
 	}
-	.gallery-image {
+	.full .gallery-image,
+	.medium .gallery-image,
+	.large .gallery-image {
 	    width: 100% !important;
 	    height: auto !important;
 		padding: 0;
+		margin-bottom: @padding-xs-horizontal;
 		
-		.thumbnail {
+		.attachment-thumbnail {
 			margin: 0;
 			margin-bottom: @padding-xs-horizontal;
 			border: none;
@@ -29,6 +54,12 @@
 
 
 #gallery-modal {
+	.close {
+		opacity: 0.3;
+		color: white;
+		text-shadow: 0 1px 0 black;
+		font-size: 18px;
+	}
 	.modal-dialog {
 		width: 75%;
 		margin: 10% auto;
@@ -38,6 +69,7 @@
 		.border-top-radius(@border-radius-base);
 		.border-bottom-radius(@border-radius-base);
 		overflow: hidden;
+		background-color: black;
 	}
 	.modal-header {
 		position: absolute;
@@ -50,22 +82,36 @@
 			font-size: 30px;
 		}
 	}
-	.caption {
+	.loader {
 		position: absolute;
-		bottom: 0;
 		width: 100%;
-		padding: @padding-small-horizontal;
-		color: white;
-		background-color: fade(black,80%);
-		z-index: 2;
+		top: 50%;
+		text-align: center;
+		font-size: 40px;
+		margin-top: -20px;
+		color: @brand-primary;
 	}
 	.modal-body {
 		padding: 0;
 		z-index: 0;
+		text-align: center;
 		
 		img {
 			width: 100%;
 			height: auto;
+		}
+		.caption {
+			position: absolute;
+			bottom: 0;
+			width: 95%;
+			padding: @padding-small-horizontal;
+			margin: 2.5%;
+			color: white;
+			background-color: fade(black,70%);
+			z-index: 2;
+			font-style: italic;
+			.border-top-radius(@border-radius-small);
+			.border-bottom-radius(@border-radius-small);
 		}
 		.gallery-control {
 			position: absolute;
@@ -91,7 +137,9 @@
 // Large devices (large desktops, 1200px and up)
 @media (max-width: @screen-lg-min) {
 	
-	.gallery .gallery-row {
+	.gallery .gallery-row.full,
+	.gallery .gallery-row.medium,
+	.gallery .gallery-row.large {
 	    -webkit-column-count: 3;
 	    -moz-column-count:    3;
 	    column-count:         3;
@@ -100,7 +148,10 @@
 
 // Medium devices (desktops, 992px and up)
 @media (max-width: @screen-md-min) {
-	.gallery .gallery-row {
+	
+	.gallery .gallery-row.full,
+	.gallery .gallery-row.medium,
+	.gallery .gallery-row.large {
 	    -webkit-column-count: 2;
 	    -moz-column-count:    2;
 	    column-count:         2;
@@ -109,7 +160,10 @@
 
 // Small devices (tablets, 768px and up)
 @media (max-width: @screen-sm-min) {
-	.gallery .gallery-row {
+	
+	.gallery .gallery-row.full,
+	.gallery .gallery-row.medium,
+	.gallery .gallery-row.large {
 	    -webkit-column-count: 1;
 	    -moz-column-count:    1;
 	    column-count:         1;

@@ -5784,6 +5784,8 @@ button.close {
 .panel-body:after,
 .modal-footer:before,
 .modal-footer:after,
+.gallery .gallery-row:before,
+.gallery .gallery-row:after,
 #instagram:before,
 #instagram:after,
 .form-horizontal .comment-form p:before,
@@ -5806,6 +5808,7 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-footer:after,
+.gallery .gallery-row:after,
 #instagram:after,
 .form-horizontal .comment-form p:after {
   clear: both;
@@ -7948,6 +7951,43 @@ button.close {
 }
 .gallery .gallery-row {
   list-style: none;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.gallery .gallery-row.thumbnail,
+.gallery .gallery-row.wp-caption {
+  border: none;
+  background-color: transparent;
+}
+.gallery .gallery-row.thumbnail li,
+.gallery .gallery-row.wp-caption li {
+  position: relative;
+  min-height: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 8px;
+}
+@media (min-width: 768px) {
+  .gallery .gallery-row.thumbnail li,
+  .gallery .gallery-row.wp-caption li {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) {
+  .gallery .gallery-row.thumbnail li,
+  .gallery .gallery-row.wp-caption li {
+    float: left;
+    width: 16.666666666666664%;
+  }
+}
+.gallery .gallery-row.thumbnail li img,
+.gallery .gallery-row.wp-caption li img {
+  width: 100%;
+}
+.gallery .gallery-row.full,
+.gallery .gallery-row.medium,
+.gallery .gallery-row.large {
   line-height: 0;
   -webkit-column-count: 4;
   -webkit-column-gap: 5px;
@@ -7956,16 +7996,26 @@ button.close {
   column-count: 4;
   column-gap: 5px;
 }
-.gallery .gallery-image {
+.gallery .full .gallery-image,
+.gallery .medium .gallery-image,
+.gallery .large .gallery-image {
   width: 100% !important;
   height: auto !important;
   padding: 0;
+  margin-bottom: 5px;
 }
-.gallery .gallery-image .thumbnail,
-.gallery .gallery-image .wp-caption {
+.gallery .full .gallery-image .attachment-thumbnail,
+.gallery .medium .gallery-image .attachment-thumbnail,
+.gallery .large .gallery-image .attachment-thumbnail {
   margin: 0;
   margin-bottom: 5px;
   border: none;
+}
+#gallery-modal .close {
+  opacity: 0.3;
+  color: white;
+  text-shadow: 0 1px 0 black;
+  font-size: 18px;
 }
 #gallery-modal .modal-dialog {
   width: 75%;
@@ -7978,6 +8028,7 @@ button.close {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   overflow: hidden;
+  background-color: black;
 }
 #gallery-modal .modal-header {
   position: absolute;
@@ -7989,22 +8040,38 @@ button.close {
 #gallery-modal .modal-header button {
   font-size: 30px;
 }
-#gallery-modal .caption {
+#gallery-modal .loader {
   position: absolute;
-  bottom: 0;
   width: 100%;
-  padding: 10px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2;
+  top: 50%;
+  text-align: center;
+  font-size: 40px;
+  margin-top: -20px;
+  color: #49c9b0;
 }
 #gallery-modal .modal-body {
   padding: 0;
   z-index: 0;
+  text-align: center;
 }
 #gallery-modal .modal-body img {
   width: 100%;
   height: auto;
+}
+#gallery-modal .modal-body .caption {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  padding: 10px;
+  margin: 2.5%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  font-style: italic;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 #gallery-modal .modal-body .gallery-control {
   position: absolute;
@@ -8024,21 +8091,27 @@ button.close {
   float: left;
 }
 @media (max-width: 1200px) {
-  .gallery .gallery-row {
+  .gallery .gallery-row.full,
+  .gallery .gallery-row.medium,
+  .gallery .gallery-row.large {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
   }
 }
 @media (max-width: 992px) {
-  .gallery .gallery-row {
+  .gallery .gallery-row.full,
+  .gallery .gallery-row.medium,
+  .gallery .gallery-row.large {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
   }
 }
 @media (max-width: 768px) {
-  .gallery .gallery-row {
+  .gallery .gallery-row.full,
+  .gallery .gallery-row.medium,
+  .gallery .gallery-row.large {
     -webkit-column-count: 1;
     -moz-column-count: 1;
     column-count: 1;
