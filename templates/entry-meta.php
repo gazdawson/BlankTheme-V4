@@ -24,5 +24,23 @@
 		<?php comments_popup_link( 'No comments', '1 comment', '% comments', 'comments-link', 'Comments are disabled'); ?>
 	</span>
 	
+	<?php
+	    $permalink = get_permalink($post->ID);
+	    $title = get_the_title();
+	?>
+	<div class="social-share">
+      <a class="icon-twitter" href="http://twitter.com/share?text=<?php echo $title; ?>&url=<?php echo $permalink; ?>" onclick="window.open(this.href, 'twitter-share', 'width=550,height=300'); return false;">
+          <span>Twitter</span>
+      </a>   
+          
+      <a class="icon-fb" href="https://www.facebook.com/sharer/sharer.php?u=<? echo $permalink; ?>" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
+          <span>Facebook</span>
+      </a>
+      
+      <a class="icon-gplus" href="https://plus.google.com/share?url=<? echo $permalink; ?>" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530'); return false;">
+         <span>Google+</span>
+      </a>
+  </div>
+	
 </div>
 
