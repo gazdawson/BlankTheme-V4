@@ -6,7 +6,7 @@
 ?>
 
 <?php if (!empty($krank['location']['latitude']) && !empty($krank['location']['longitude'])) { ?>
-	<div id="map"></div>
+	<div id="map" style="height: 300px; background-color: red;"></div>
 <?php } // endif ?>
 
 <div class="header">

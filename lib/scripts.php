@@ -60,12 +60,18 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
 	
+  // Google maps api for contact page
+  if(!is_admin() && is_page( 'contact' )) {
+  	wp_register_script('google_maps_api', '//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), null, false);
+  }
+	
   wp_enqueue_script('respond', get_template_directory_uri() . $assets['respond'], array(), null, true);
   wp_enqueue_script('jquery');
   wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
 	wp_enqueue_script('main', get_template_directory_uri() . $assets['main'], array(), null, true);
 	wp_enqueue_script('formval', get_template_directory_uri() . $assets['formval'], array(), null, true);
 	wp_enqueue_script('formval_frame', get_template_directory_uri() . $assets['formval_frame'], array(), null, true);
+	wp_enqueue_script('google_maps_api');
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 
