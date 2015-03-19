@@ -12,44 +12,45 @@
 	<?php endif; ?>
 	
 	<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address">
-		<?php // Address Loop
-			foreach($krank['address'] as $key => $value) :
-				if($value) :
-		?>
+		
+		<?php foreach($krank['address'] as $key => $value) : if($value) : ?>
 			<span itemprop="<?php echo $key; ?>"><?php echo $value; ?></span>
-		<?php 
-				endif; 
-			endforeach;
-		?>
+		<?php  endif; endforeach; ?>
+		
 	</div><!--/.address-->
 	
 	<div class="contact">
-		<?php // Contact Loop
-			foreach($krank['contact'] as $key => $value) :
-				if($value) :
-		?>
-			<abbr title="<?php echo ucFirst($key); ?>"><?php echo substr($key,0,1); ?>: </abbr>
-			<span itemprop="<?php echo $key; ?>"><?php echo $value; ?></span>
-		<?php 
-				endif; 
-			endforeach;
-		?>
+		
+		<?php foreach($krank['contact'] as $key => $value) : if($value) : ?>
+			
+			  <abbr title="<?php echo ucFirst($key); ?>"><?php echo substr($key,0,1); ?>: </abbr>
+				
+			  <?php if($key == 'telephone') : ?>
+					<a href="tel:<?php echo $value; ?>" title="Call <?php echo $krank['name']; ?>"><span itemprop="<?php echo $key; ?>"><?php echo $value; ?></span></a>
+					
+				<?php elseif($key == 'email') : ?>
+					<a href="mailto: <?php echo $value; ?>" title="Email <?php echo $krank['name']; ?>"><span itemprop="<?php echo $key; ?>"><?php echo $value; ?></span></a>
+					
+				<?php else : ?>
+					<span itemprop="<?php echo $key; ?>"><?php echo $value; ?></span>
+				<?php endif; ?>
+				
+		<?php endif; endforeach; ?>
+		
 	</div><!--/.contact-->
 	
 	<div itemprop="openingHoursSpecification" itemscope itemtype="http://schema.org/OpeningHoursSpecification" class="opening-times">
-		<?php // Contact Loop
-			foreach($krank['open'] as $key => $value) :
-				if($value) :
-		?>
+		
+		<?php foreach($krank['open'] as $key => $value) : if($value) : ?>
+			
 			<span itemprop="dayOfWeek" itemscope itemtype="http://schema.org/DayOfWeek">
 				<span itemprop="name"><?php echo $key; ?></span>
 			</span>
 			<meta itemprop="opens" content="<?php echo substr($value,0,5).':00'; ?>">
 			<meta itemprop="closes" content="<?php echo substr($value,8,99).':00'; ?>">
-		<?php 
-				endif; 
-			endforeach;
-		?>
+			
+		<?php endif; endforeach; ?>
+		
 	</div><!--/.opening-times-->
 	
 </div><!--/.business-info-->
