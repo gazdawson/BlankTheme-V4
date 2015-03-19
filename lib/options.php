@@ -356,6 +356,7 @@
 							'desc'=> __('Upload your logo JPG, PNG or GIF format accepted', 'redux-framework-demo'),
 							'subtitle' => __('', 'redux-framework-demo'),
 						),
+						
 						// Website Body Custom Background
 						array(
 							'id'=>'body-bgd',

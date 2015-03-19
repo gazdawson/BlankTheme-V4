@@ -3,6 +3,7 @@
  * Template Name: Options Print
  * @package Krank Theme
  */
+global $krank;
 ?>
 <dl>
 <?php
