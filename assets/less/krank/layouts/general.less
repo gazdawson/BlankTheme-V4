@@ -53,6 +53,24 @@ img {
 }
 
 // Titles
+.page-header {
+	padding-top: @padding-large-vertical*2;
+	margin: 0;
+	border: none;
+	
+	&:after {
+		content: '';
+		display: block;
+		width: 15%;
+		border-bottom: 1px solid @gray-lighter;
+		margin: @padding-large-vertical*2 auto;
+	}
+	
+	h1 {
+		text-align: center;
+		margin: 0;
+	}
+}
 
 .section-header {
 	text-align: center;
@@ -62,7 +80,7 @@ img {
 		display: block;
 		width: 15%;
 		border-bottom: 1px solid @gray-lighter;
-		margin: @grid-gutter-width auto;
+		margin: @padding-large-vertical auto;
 	}
 }
 
