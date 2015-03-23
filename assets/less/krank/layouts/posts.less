@@ -31,13 +31,42 @@
 		width: 100%;
 		z-index: 1000;
 		background-color: white;
-		padding: @padding-large-vertical @padding-large-horizontal;
+		font-size: 14px;
+		color: @gray;
+		padding: @padding-large-vertical @padding-large-horizontal*2;
 		line-height: 30px;
 		border-top: 1px solid @gray-lighter;
+		
+		.meta-author,
+		.published {
+			&:after {
+				display: inline-block;
+				content: '\2022';
+				font-size: 12px;
+				padding: 0 @padding-small-horizontal;
+			}
+		}
+		
 		.avatar {
 			.img-circle;
 			float: left;
 			margin-right: @padding-small-horizontal;
+		}
+		.social-share {
+			float: right;
+			font-size: 23px;
+			.meta-title {
+				font-size: 16px;
+				&:after {
+					display: inline-block;
+					content: '\2022';
+					font-size: 12px;
+					padding: 0 @padding-small-horizontal;
+				}
+			}
+			a {
+				line-height: 34px;
+			}
 		}
 	}
 }

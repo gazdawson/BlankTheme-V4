@@ -8581,7 +8581,7 @@ img {
   display: none;
   position: fixed;
   z-index: 1000;
-  bottom: 30px;
+  bottom: 75px;
   right: 30px;
   width: 40px;
   height: 40px;
@@ -8633,14 +8633,39 @@ img {
   width: 100%;
   z-index: 1000;
   background-color: white;
-  padding: 10px 16px;
+  font-size: 14px;
+  color: #95a5a6;
+  padding: 10px 32px;
   line-height: 30px;
   border-top: 1px solid #ecf0f1;
+}
+.single-post .entry-meta .meta-author:after,
+.single-post .entry-meta .published:after {
+  display: inline-block;
+  content: '\2022';
+  font-size: 12px;
+  padding: 0 10px;
 }
 .single-post .entry-meta .avatar {
   border-radius: 50%;
   float: left;
   margin-right: 10px;
+}
+.single-post .entry-meta .social-share {
+  float: right;
+  font-size: 23px;
+}
+.single-post .entry-meta .social-share .meta-title {
+  font-size: 16px;
+}
+.single-post .entry-meta .social-share .meta-title:after {
+  display: inline-block;
+  content: '\2022';
+  font-size: 12px;
+  padding: 0 10px;
+}
+.single-post .entry-meta .social-share a {
+  line-height: 34px;
 }
 blockquote {
   position: relative;

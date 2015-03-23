@@ -9,19 +9,15 @@
 	
 	<time class="published" datetime="<?php echo get_the_time('c'); ?>">
 		<?php if(is_single()) { ?>
-			<?php echo get_the_date('F j, Y'); ?> | 
+			<?php echo get_the_date('F j'); ?> 
 		<?php } else { ?>
 			<span class="month"><?php echo get_the_date('M'); ?></span>
 			<span class="day"><?php echo get_the_date('d'); ?></span>
 		<?php } // endif ?> 
 	</time>
 	
-	<span class="meta-category">
-		<?php the_category(', '); ?> | 
-	</span>
-	
 	<span class="meta-comments">
-		<?php comments_popup_link( 'No comments', '1 comment', '% comments', 'comments-link', 'Comments are disabled'); ?>
+		<?php comments_popup_link( '0 <i class="fa fa-comment"></i>', '1 <i class="fa fa-comment"></i>', '% <i class="fa fa-comments"></i>', 'comments-link', ''); ?>
 	</span>
 	
 	<?php
@@ -29,18 +25,20 @@
 	    $title = get_the_title();
 	?>
 	<div class="social-share">
+		<span class="meta-title">Share this post on</span>
       <a class="icon-twitter" href="http://twitter.com/share?text=<?php echo $title; ?>&url=<?php echo $permalink; ?>" onclick="window.open(this.href, 'twitter-share', 'width=550,height=300'); return false;">
-          <span>Twitter</span>
+          <span><i class="fa fa-twitter"></i><span>
       </a>   
           
       <a class="icon-fb" href="https://www.facebook.com/sharer/sharer.php?u=<? echo $permalink; ?>" onclick="window.open(this.href, 'facebook-share', 'width=580,height=296'); return false;">
-          <span>Facebook</span>
+          <span><i class="fa fa-facebook"></i><span>
       </a>
       
       <a class="icon-gplus" href="https://plus.google.com/share?url=<? echo $permalink; ?>" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530'); return false;">
-         <span>Google+</span>
+         <span><i class="fa fa-google-plus"></i><span>
       </a>
   </div>
 	
-</div>
+
+</div><!--/.entry-meta -->
 
