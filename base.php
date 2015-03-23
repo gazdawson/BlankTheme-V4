@@ -12,22 +12,13 @@
     get_template_part('templates/header');
   ?>
 	
-	<?
-		// wrap content in container if page is not one of. 
-		if( !is_front_page() && !is_single() ) : 
-	?>
-	  <div class="wrap container" role="document">
-	    <div class="content row">
-				
-				<?php get_template_part('templates/main'); ?>
+  <div class="wrap container" role="document">
+    <div class="content row">
 			
-	    </div><!-- /.content -->
-	  </div><!-- /.wrap -->
-	<?php else : ?>
+			<?php get_template_part('templates/main'); ?>
 		
-		<?php get_template_part('templates/main'); ?>
-		
-	<?php endif; ?>
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>
 

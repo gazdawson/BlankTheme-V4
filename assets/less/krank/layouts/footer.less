@@ -2,9 +2,64 @@
 // = Footer Styles =
 // =================
 
+.pre-footer {
+	margin: @grid-gutter-width 0;
+	padding-top: @grid-gutter-width;
+	border-top: 1px solid @gray-lighter;
+	text-align: center;
+	
+	.lead {
+		margin-bottom: @padding-large-vertical;
+	}
+}
+
 .content-info { 
-	.business-info {
-		.opening-times {display: none;}
+	clear: both;
+	padding: @padding-large-vertical*2;
+	margin: @grid-gutter-width / 2;
+	background-color: white;
+	border-top: 1px solid @gray-lighter;
+	
+	.business-address,
+	.business-contact,
+	.footer-links,
+	.site-author {
+		.make-sm-column(3);
+	}
+	
+	.footer-title {
+		.h4;
+		margin-top: 0;
+	}
+	
+	.address {
+		text-align: left;
+		span {
+			display: inline-block;
+		}
+		.copy,
+		.name {
+			.h4;
+			margin-top: 0;
+		}
+	}
+	.contact {
+		text-align: left;
+		.contact-info {
+			list-style: none;
+			padding: 0;
+		}
+	}
+	.footer-links {
+		.menu {
+			list-style: none;
+			padding-left: 0;
+		}
+	}
+	.site-author {
+		img {
+			width: 100px;
+		}
 	}
 }
 
@@ -29,12 +84,5 @@
 	&:hover {
 		background-color: fade(@brand-primary, 80%);
 	}
-}
-
-// Krank Creative Credit
-.site-author {
-	color: @gray-lighter;
-	text-align: center;
-	margin: @grid-gutter-width/2 0;
 }
 

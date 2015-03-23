@@ -8462,8 +8462,104 @@ img {
     width: 33.33333333333333%;
   }
 }
-.content-info .business-info .opening-times {
-  display: none;
+.pre-footer {
+  margin: 30px 0;
+  padding-top: 30px;
+  border-top: 1px solid #ecf0f1;
+  text-align: center;
+}
+.pre-footer .lead {
+  margin-bottom: 10px;
+}
+.content-info {
+  clear: both;
+  padding: 20px;
+  margin: 15px;
+  background-color: white;
+  border-top: 1px solid #ecf0f1;
+}
+.content-info .business-address,
+.content-info .business-contact,
+.content-info .footer-links,
+.content-info .site-author {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .content-info .business-address,
+  .content-info .business-contact,
+  .content-info .footer-links,
+  .content-info .site-author {
+    float: left;
+    width: 25%;
+  }
+}
+.content-info .footer-title {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
+  font-size: 23px;
+  margin-top: 0;
+}
+.content-info .footer-title small,
+.content-info .footer-title .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #bdc3c7;
+}
+.content-info .footer-title small,
+.content-info .footer-title .small {
+  font-size: 75%;
+}
+.content-info .address {
+  text-align: left;
+}
+.content-info .address span {
+  display: inline-block;
+}
+.content-info .address .copy,
+.content-info .address .name {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.1;
+  color: inherit;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
+  font-size: 23px;
+  margin-top: 0;
+}
+.content-info .address .copy small,
+.content-info .address .name small,
+.content-info .address .copy .small,
+.content-info .address .name .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #bdc3c7;
+}
+.content-info .address .copy small,
+.content-info .address .name small,
+.content-info .address .copy .small,
+.content-info .address .name .small {
+  font-size: 75%;
+}
+.content-info .contact {
+  text-align: left;
+}
+.content-info .contact .contact-info {
+  list-style: none;
+  padding: 0;
+}
+.content-info .footer-links .menu {
+  list-style: none;
+  padding-left: 0;
+}
+.content-info .site-author img {
+  width: 100px;
 }
 #to-top {
   display: none;
@@ -8491,11 +8587,6 @@ img {
 }
 #to-top:hover {
   background-color: rgba(73, 201, 176, 0.8);
-}
-.site-author {
-  color: #ecf0f1;
-  text-align: center;
-  margin: 15px 0;
 }
 .hentry p {
   font-family: "Halant", "Times New Roman", Times, serif;
