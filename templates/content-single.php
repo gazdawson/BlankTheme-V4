@@ -10,7 +10,7 @@
     </div>
 		<?php if($krank['related_enable'] != 0): ?>
 			<div class="relatedposts">
-	    	<p class="section-header h2">Related Posts</p>
+	    	<p class="section-header">Related Posts</p>
 	    	<?php related_posts(); ?>
 	    </div>
 		<?php endif; ?>

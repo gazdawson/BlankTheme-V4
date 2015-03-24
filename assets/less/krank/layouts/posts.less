@@ -132,37 +132,19 @@ figure {
 // Related Post Layout
 
 .relatedposts {
+	.make-row();
+	
+	.section-header {
+		.h3;
+	}
+	
 	.relatedthumb {
-		border: 1px solid @gray-lighter;
-		margin-bottom: @padding-large-vertical;
-		.border-top-radius(@border-radius-base);
-		.border-bottom-radius(@border-radius-base);
-		.clearfix;
-		
-		a {
-			display: block;
-			color: @gray;
-			
-			&:hover {
-				background-color: @gray-lighter;
-			}
-		}
-		.related-image {
-			.make-sm-column(2,0);
-			margin-bottom: 0;
-			img {
-				.img-responsive;
-				.border-left-radius(@border-radius-base);
-			}
-		}
-		.related-title,
-		.related-excerpt {
-			.make-sm-column(10);
-		}
+		.make-sm-column(4);
 		.related-title {
-			.h2;
-			padding-top: @grid-gutter-width / 2;
-			margin-top: 0;
+			.h4;
+		}
+		.related-excerpt {
+			font-size: 14px;
 		}
 	}
 }
