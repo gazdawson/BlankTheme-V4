@@ -1,3 +1,25 @@
 .sidebar {
   .make-sm-column(@sidebar-sm-columns);
+  height: 100%;
+  text-align: left;
+  border-left: 1px solid @gray-lighter;
+  
+  section {
+	  padding: 0 @grid-gutter-width / 2;
+  }
+
+  h3 {
+	  .h4;
+	  padding-bottom: @padding-large-vertical;
+	  border-bottom: 1px solid @gray-lighter;
+  }
+  
+  ul {
+	  list-style: none;
+	  padding-left: @padding-base-horizontal;
+	  li {
+		  padding: @padding-small-vertical/2 0;
+		  font-size: 90%;
+	  }
+  }
 }
