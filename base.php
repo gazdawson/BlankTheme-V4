@@ -12,6 +12,15 @@
     get_template_part('templates/header');
   ?>
 	
+	<?php
+		// Disable template wrapper on certain pages
+		if(is_single() || is_front_page()) :
+	?>
+			
+	<?php get_template_part('templates/main'); ?>
+			
+	<?php else : ?>
+		
   <div class="wrap container" role="document">
     <div class="content row">
 			
@@ -19,6 +28,8 @@
 		
     </div><!-- /.content -->
   </div><!-- /.wrap -->
+	
+	<?php endif; ?>
 
   <?php get_template_part('templates/footer'); ?>
 
