@@ -341,6 +341,50 @@
 				);
 				
 				// =================================================================================================
+				// = Krank Social ******************************************************************************** =
+				// =================================================================================================
+				
+				$this->sections[] = array(
+					'icon' => 'el-icon-group',
+					'title' => __('Social Media', 'redux-framework-demo'),
+					'fields' => array(
+						// Social Networks
+						array(
+							'id'=>'facebook_profile',
+							'type' => 'text',
+							'title' => __('Facebook profile URL', 'redux-framework-demo'),
+							'subtitle' => __('', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => 'https://facebook.com/',
+						),
+						array(
+							'id'=>'twitter_profile',
+							'type' => 'text',
+							'title' => __('Twitter profile URL', 'redux-framework-demo'),
+							'subtitle' => __('', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => 'https://twitter.com/',
+						),
+						array(
+							'id'=>'google_profile',
+							'type' => 'text',
+							'title' => __('Google+ profile URL', 'redux-framework-demo'),
+							'subtitle' => __('', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => 'https://plus.google.com/',
+						),
+						array(
+							'id'=>'instagram_profile',
+							'type' => 'text',
+							'title' => __('Instagram profile URL', 'redux-framework-demo'),
+							'subtitle' => __('', 'redux-framework-demo'),
+							'desc' => __('', 'redux-framework-demo'),
+							'default' => 'https://instagram.com/',
+							)
+					)
+				);
+				
+				// =================================================================================================
 				// = Krank Design ******************************************************************************** =
 				// =================================================================================================
 				
