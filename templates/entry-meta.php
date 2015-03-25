@@ -16,14 +16,17 @@
 		<?php } // endif ?> 
 	</time>
 	
+<?php if(comments_open()) : ?>
 	<span class="meta-comments">
 		<?php comments_popup_link( '0 <i class="fa fa-comment"></i>', '1 <i class="fa fa-comment"></i>', '% <i class="fa fa-comments"></i>', 'comments-link', ''); ?>
 	</span>
+<?php endif; ?>
 	
-	<?php
-	    $permalink = get_permalink($post->ID);
-	    $title = get_the_title();
-	?>
+<?php
+    $permalink = get_permalink($post->ID);
+    $title = get_the_title();
+		if(is_single()) :
+?>
 	<div class="social-share">
 		<span class="meta-title">Share this post on</span>
       <a class="icon-twitter" href="http://twitter.com/share?text=<?php echo $title; ?>&url=<?php echo $permalink; ?>" onclick="window.open(this.href, 'twitter-share', 'width=550,height=300'); return false;">
@@ -38,7 +41,7 @@
          <span><i class="fa fa-google-plus"></i><span>
       </a>
   </div>
-	
+<?php endif; ?>
 
 </div><!--/.entry-meta -->
 

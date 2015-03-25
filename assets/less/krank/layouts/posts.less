@@ -9,22 +9,80 @@
 		font-weight: 400;
 		letter-spacing: .3px;
 	}
-	
-	header { }
-	time { }
-	.byline { }
-	.entry-content { }
-	footer { }
+	header {
+		h2 {
+			a {
+				color: darken(@text-color, 10%);
+			}
+		}
+	}
+	// Global entry meta styles
+	.entry-meta {
+		.avatar {
+			.img-circle;
+			float: left;
+			margin-right: @padding-small-horizontal;
+		}
+		.meta-comments {
+			a {
+				color: @gray-light;
+				
+				&:hover {
+					color: @brand-primary;
+				}
+			}
+		}
+	}
 }
 
-// Post Type Layouts
+// Blog archive page
+.blog {
+	.hentry {
+		position: relative;
+		
+		&:after {
+			content: '';
+			display: inline-block;
+			border-bottom: 1px solid @gray-lighter;
+			width: 80%;
+			margin: 0 auto;
+		}
+		
+		.wp-post-image {
+			float: right;
+			margin-left: @padding-base-horizontal;
+			.border-left-radius(@border-radius-base);
+		}
+		
+		.entry-meta {
+			font-size: 14px;
+			line-height: 30px;
+			color: @gray;
+			
+			.meta-comments {
+				&:before {
+					display: inline-block;
+					content: '\2022';
+					font-size: 12px;
+					padding: 0 @padding-small-horizontal;
+				}
+			}
+			
+			.meta-author {
+				position: absolute;
+				bottom: -@padding-base-vertical;
+				right: @padding-large-horizontal;
+			}
+		}
+	}
+}
 
+// Single post page
 .single-post {
 	.hentry.post {
-		.make-sm-column(10);
-		.make-sm-column-offset(1);
+		.make-sm-column(8);
+		.make-sm-column-offset(2);
 	}
-	
 	.entry-meta {
 		position: fixed;
 		bottom: 0;
@@ -38,21 +96,13 @@
 		line-height: 30px;
 		border-top: 1px solid @gray-lighter;
 		
-		.meta-author,
-		.published {
-			&:after {
-				display: inline-block;
-				content: '\2022';
-				font-size: 12px;
-				padding: 0 @padding-small-horizontal;
-			}
+		&:after {
+			display: inline-block;
+			content: '\2022';
+			font-size: 12px;
+			padding: 0 @padding-small-horizontal;
 		}
 		
-		.avatar {
-			.img-circle;
-			float: left;
-			margin-right: @padding-small-horizontal;
-		}
 		.social-share {
 			float: right;
 			font-size: 23px;
@@ -71,6 +121,8 @@
 		}
 	}
 }
+
+
 
 
 // blockquotes styling
