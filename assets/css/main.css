@@ -8217,15 +8217,16 @@ figure.alignnone {
   height: auto;
 }
 .carousel .carousel-inner .item .carousel-caption {
+  font-size: 16px;
   font-weight: 300;
-  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 30%;
 }
 .carousel .carousel-inner .item .carousel-caption .carousel-title {
   font-size: 30px;
   padding: 0 10px;
 }
 .carousel .carousel-inner .item .carousel-caption .carousel-description {
-  font-size: 24px;
+  font-size: 18px;
   padding: 0 10px;
   display: block;
 }

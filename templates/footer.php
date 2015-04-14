@@ -2,24 +2,24 @@
 
 <a href="#" id="to-top"><i class="fa fa-angle-up"></i></a>
 
-<div class="pre-footer container">
-	<div class="row">
-		<div class="col-sm-12">
-				<p class="lead">See what <?php echo $krank['name']; ?> can do for you!</p>
-				<p>Get in contact today!</p>
-				<?php
-					// Krank Modal
-					krank_get_template_part( 'templates/components/modal.php', array(
-						'modal_id' => 'contact',
-						'modal_btn_txt' => '<i class="fa fa-envelope-o"></i> Send us a message',
-						'modal_header' => true,
-						'modal_title' => 'Send us a message',
-						'modal_template' => 'templates/components/contact-form',
-						'modal_content' => '',
-						'modal_footer' => true,
-						'modal_footer_content' => ''
-					) );
-				?>
+<div class="pre-footer">
+	<div class="container">
+		<div class="row">
+			<p class="lead">See what <?php echo $krank['name']; ?> can do for you!</p>
+			<p>Get in contact today!</p>
+			<?php
+				// Krank Modal
+				krank_get_template_part( 'templates/components/modal.php', array(
+					'modal_id' => 'contact',
+					'modal_btn_txt' => '<i class="fa fa-envelope-o"></i> Send us a message',
+					'modal_header' => true,
+					'modal_title' => 'Send us a message',
+					'modal_template' => 'templates/components/contact-form',
+					'modal_content' => '',
+					'modal_footer' => true,
+					'modal_footer_content' => ''
+				) );
+			?>
 		</div>
 	</div>
 </div><!--/.pre-footer-->
