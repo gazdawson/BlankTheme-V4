@@ -8237,9 +8237,6 @@ figure.alignnone {
   font-size: 60px;
   line-height: 400px;
 }
-#home-carousel {
-  margin-top: -20px;
-}
 .instagram-btn {
   padding: 5px 10px;
   font-size: 12px;
@@ -8365,6 +8362,7 @@ fieldset[disabled] .instagram-btn.active {
 }
 body {
   font-weight: 300;
+  display: none;
 }
 a,
 button,
@@ -8876,6 +8874,13 @@ figure img {
 }
 .relatedposts .relatedthumb .related-excerpt {
   font-size: 14px;
+}
+body.home #home-carousel {
+  margin-top: -20px;
+}
+body.contact #map {
+  height: 300px;
+  margin-top: -20px;
 }
 .fa {
   display: inline-block;

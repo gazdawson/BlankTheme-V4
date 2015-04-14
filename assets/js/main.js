@@ -37,6 +37,11 @@ var Roots = {
 			$('html, body').animate({scrollTop: 0}, 300);
 		});
 		
+		// Smooth page load
+		$(window).load(function() {
+			$(document.body).fadeIn('slow');
+		});
+		
 		// Contact Form Validation 
 		$('#contact-form').formValidation({
 			framework: 'bootstrap',
