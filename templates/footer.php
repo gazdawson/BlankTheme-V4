@@ -2,10 +2,9 @@
 
 <a href="#" id="to-top"><i class="fa fa-angle-up"></i></a>
 
-<div class="pre-footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
+<div class="pre-footer container">
+	<div class="row">
+		<div class="col-sm-12">
 				<p class="lead">See what <?php echo $krank['name']; ?> can do for you!</p>
 				<p>Get in contact today!</p>
 				<?php
@@ -21,7 +20,6 @@
 						'modal_footer_content' => ''
 					) );
 				?>
-			</div>
 		</div>
 	</div>
 </div><!--/.pre-footer-->

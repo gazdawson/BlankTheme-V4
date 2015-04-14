@@ -8,7 +8,8 @@
 	<div class="wrap" role="document">
 		<article <?php post_class(); ?>>
 			
-	    <header class="entry-header" style="background: url('<?php echo $url; ?>') no-repeat center center;">
+	    <header class="entry-header">
+				<div class="background-image" style="background: url('<?php echo $url; ?>') no-repeat center center;"></div>
 				<div class="container">
 		      <h1 class="entry-title"><?php the_title(); ?></h1>
 					<p class="lead"><?php echo get_the_excerpt(); ?></p>
