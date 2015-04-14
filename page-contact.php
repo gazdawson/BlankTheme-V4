@@ -1,23 +1,18 @@
-<?php
-/**
- * Template Name: Contact
- * @package Krank Theme
- */
-?>
+<?php global $krank; ?>
 
-<?php if (!empty($krank['location']['latitude']) && !empty($krank['location']['longitude'])) { ?>
-	<div id="map" style="height: 300px; background-color: red;"></div>
-<?php } // endif ?>
+<?php if (!empty($krank['location']['latitude']) && !empty($krank['location']['longitude'])) : ?>
+	<div id="map"></div>
+<?php endif; ?>
 
-<div class="header">
-	<?php get_template_part('templates/page', 'header'); ?>
-</div>
+<?php while (have_posts()) : the_post(); ?>
+  <?php get_template_part('templates/page', 'header'); ?>
+  <?php get_template_part('templates/content', 'page'); ?>
+<?php endwhile; ?>
+
 <div class="content">
-	<?php get_template_part('templates/components/contact-form'); ?>
-	<h2>Contact Us</h2>
-	<?php get_template_part('templates/components/business-info'); ?>
+	<?php get_template_part('templates/components/business-info-contact'); ?>
+	<?php get_template_part('templates/components/business-info-address'); ?>
 </div>
-<?php get_template_part('templates/content', 'page'); ?>
 
 <?php
 	// Load Krank Options
