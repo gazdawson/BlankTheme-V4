@@ -30,6 +30,7 @@ $roots_includes = array(
   'lib/metaboxes.php',                    // Meta Boxes Custom Config
   'lib/options.php',                      // Redux Framework Custom Config
 	'lib/woocommerce.php',                  // Woocommerce theme support (comment out if not installed)
+	'lib/custom-posts.php',                 // Custom posts and taxamonies
 );
 
 foreach ($roots_includes as $file) {
