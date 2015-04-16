@@ -8646,12 +8646,6 @@ img {
 #to-top:hover {
   background-color: rgba(73, 201, 176, 0.8);
 }
-.hentry p {
-  font-family: "Playfair Display", "Times New Roman", Times, serif;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: .3px;
-}
 .hentry header h2 a {
   color: #667273;
 }
@@ -8707,36 +8701,30 @@ img {
 @media (min-width: 768px) {
   .single-post .entry {
     float: left;
-    width: 66.66666666666666%;
+    width: 83.33333333333334%;
   }
 }
 @media (min-width: 768px) {
   .single-post .entry {
-    margin-left: 16.666666666666664%;
+    margin-left: 8.333333333333332%;
   }
 }
 .single-post .entry-header {
   position: relative;
-  display: table;
-  width: 100%;
-  margin: -20px -15px 30px -15px;
-  height: 300px;
-  overflow: hidden;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.single-post .entry-header .background-image {
-  width: 100%;
-  height: 100%;
-  content: '';
-  position: absolute;
-  z-index: -1;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+@media (min-width: 768px) {
+  .single-post .entry-header {
+    float: left;
+    width: 83.33333333333334%;
+  }
 }
-.single-post .entry-header .container {
-  text-align: center;
-  color: white;
+@media (min-width: 768px) {
+  .single-post .entry-header {
+    margin-left: 8.333333333333332%;
+  }
 }
 .single-post .entry-meta {
   position: fixed;
@@ -8879,6 +8867,9 @@ figure img {
 }
 .relatedposts .relatedthumb .related-excerpt {
   font-size: 14px;
+}
+body.home main {
+  margin-bottom: 30px;
 }
 body.home #home-carousel {
   margin-top: -20px;

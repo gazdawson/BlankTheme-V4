@@ -9,14 +9,10 @@
 		<article <?php post_class(); ?>>
 			
 	    <header class="entry-header">
-				<div class="background-image" style="background: url('<?php echo $url; ?>') no-repeat center center;"></div>
-				<div class="container">
 		      <h1 class="entry-title"><?php the_title(); ?></h1>
-					<p class="lead"><?php echo get_the_excerpt(); ?></p>
-				</div>
 	    </header><!-- /.entry-header -->
 			
-			<div class="content container">
+			<div class="content">
 				<div class="row">
 					
 					<div class="entry">
