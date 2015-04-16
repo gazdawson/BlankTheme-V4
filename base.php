@@ -14,7 +14,7 @@
 	
 	<?php
 		// Disable template wrapper on certain pages
-		if(is_single() || is_front_page()) :
+		if(is_single() || is_front_page() || is_page( 'contact' ) ) :
 	?>
 			
 	<?php get_template_part('templates/main'); ?>

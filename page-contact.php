@@ -4,15 +4,33 @@
 	<div id="map"></div>
 <?php endif; ?>
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/page', 'header'); ?>
-  <?php get_template_part('templates/content', 'page'); ?>
-<?php endwhile; ?>
-
-<div class="content">
-	<?php get_template_part('templates/components/business-info-contact'); ?>
-	<?php get_template_part('templates/components/business-info-address'); ?>
-</div>
+  <div class="wrap container" role="document">
+    <div class="content row">
+			<?php while (have_posts()) : the_post(); ?>
+			  <?php get_template_part('templates/page', 'header'); ?>
+			  <?php get_template_part('templates/content', 'page'); ?>
+			<?php endwhile; ?>
+			<div class="content">
+				
+				<div class="contact-form">
+					<h2>Send us a Message</h2>
+					<?php get_template_part('templates/components/contact-form'); ?>
+				</div>
+				<div class="business-info">
+					<div class="business-address">
+						<h2>Location</h2>
+						<?php get_template_part('templates/components/business-info-address'); ?>
+					</div>
+					<div class="business-contact">
+						<h2>Contact Info</h2>
+						<?php get_template_part('templates/components/business-info-contact'); ?>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
 
 <?php
 	// Load Krank Options

@@ -3,10 +3,50 @@
 // ========================
 
 body.contact {
-	
+	main {
+		margin-bottom: @grid-gutter-width;
+	}
 	// Google map
 	#map {
+		.make-row;
 		height: 300px;
 		margin-top: -@navbar-margin-bottom;
+	}
+	
+	.contact-form {
+		.make-sm-column(6);
+	}
+	.business-info {
+		.make-sm-column(6);
+		
+		.business-address,
+		.business-contact {
+			display: block;
+			text-align: left;
+			.business-info {
+				float: none;
+			}
+		}
+		
+		.business-address {
+			.address {
+				display: inherit;
+				width: auto;
+				text-align: left;
+				span {
+					display: block;
+				}
+			}
+		}
+		
+		.business-contact {
+			.contact-info {
+				display: inherit;
+				padding-left: 0;
+				list-style: none;
+				text-align: left;
+			}
+		}
+		
 	}
 }

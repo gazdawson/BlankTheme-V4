@@ -5791,6 +5791,8 @@ button.close {
 #instagram:after,
 .relatedposts:before,
 .relatedposts:after,
+body.contact #map:before,
+body.contact #map:after,
 .woocommerce div.product .woocommerce-tabs ul.tabs:before,
 .woocommerce div.product .woocommerce-tabs ul.tabs:after,
 .woocommerce-page div.product .woocommerce-tabs ul.tabs:before,
@@ -5826,6 +5828,7 @@ button.close {
 .gallery .gallery-row:after,
 #instagram:after,
 .relatedposts:after,
+body.contact #map:after,
 .woocommerce div.product .woocommerce-tabs ul.tabs:after,
 .woocommerce-page div.product .woocommerce-tabs ul.tabs:after,
 .woocommerce #content div.product .woocommerce-tabs ul.tabs:after,
@@ -8880,9 +8883,61 @@ figure img {
 body.home #home-carousel {
   margin-top: -20px;
 }
+body.contact main {
+  margin-bottom: 30px;
+}
 body.contact #map {
+  margin-left: -15px;
+  margin-right: -15px;
   height: 300px;
   margin-top: -20px;
+}
+body.contact .contact-form {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  body.contact .contact-form {
+    float: left;
+    width: 50%;
+  }
+}
+body.contact .business-info {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  body.contact .business-info {
+    float: left;
+    width: 50%;
+  }
+}
+body.contact .business-info .business-address,
+body.contact .business-info .business-contact {
+  display: block;
+  text-align: left;
+}
+body.contact .business-info .business-address .business-info,
+body.contact .business-info .business-contact .business-info {
+  float: none;
+}
+body.contact .business-info .business-address .address {
+  display: inherit;
+  width: auto;
+  text-align: left;
+}
+body.contact .business-info .business-address .address span {
+  display: block;
+}
+body.contact .business-info .business-contact .contact-info {
+  display: inherit;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
 }
 .fa {
   display: inline-block;
