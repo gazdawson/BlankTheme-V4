@@ -18,19 +18,6 @@ $label_message = "Your Message *";
 $label_submit = "Submit";
 $success = "Thanks for your e-mail! We'll get back to you as soon as we can.";
 
-// function to get the IP address of the user
-function contact_form_get_the_ip() {
-	if (isset($_SERVER["HTTP_X_FORWARDED_FOR"])) {
-		return $_SERVER["HTTP_X_FORWARDED_FOR"];
-	}
-	elseif (isset($_SERVER["HTTP_CLIENT_IP"])) {
-		return $_SERVER["HTTP_CLIENT_IP"];
-	}
-	else {
-		return $_SERVER["REMOTE_ADDR"];
-	}
-}
-
 // if the <form> element is POSTed, run the following code
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $error = false;
@@ -48,7 +35,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         // get the website's name and puts it in front of the subject
         $email_subject = "[" . get_bloginfo( 'name' ) . "] " . $form_data['subject'];
         // get the message from the form and add the IP address of the user below it
-        $email_message = "Tel: ".$form_data['number']."\n Email: ".$form_data['email']."\n\n". $form_data['message'] . "\n\nIP: " . contact_form_get_the_ip();
+        $email_message = "Tel: ".$form_data['number']."\n Email: ".$form_data['email']."\n\n". $form_data['message'] . "\n\nIP: ";
         // set the e-mail headers with the user's name, e-mail address and character encoding
         $headers  = "From: " . $form_data['your_name'] . " <" . $form_data['email'] . ">\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\n";
