@@ -32,7 +32,7 @@ function roots_scripts() {
   } else {
     $assets     = array(
       'css'            => '/assets/css/main.css?' . $assets['/assets/css/main.css']['hash'],
-      'js'             => '/assets/js/scripts.min.js?' . $assets['assets/js/scripts.min.js']['hash'],
+      'js'             => '/assets/js/scripts.js?' . $assets['assets/js/scripts.js']['hash'],
 			'main'           => '/assets/js/main.js',
 			'respond'        => '/assets/js/vendor/respond.js',
 			'formval'        => '/assets/js/vendor/formvalidation/js/formValidation.min.js',
